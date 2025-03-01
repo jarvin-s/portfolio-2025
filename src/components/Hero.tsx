@@ -1,6 +1,9 @@
 import { League_Gothic } from 'next/font/google'
 import Image from 'next/image'
 import React from 'react'
+import { Meteors } from './ui/meteor-effect'
+// import { BoxesCore } from './ui/background-boxes'
+// import { StarsBackground } from './ui/stars-background'
 
 const leagueGothic = League_Gothic({
     subsets: ['latin'],
@@ -10,12 +13,15 @@ const leagueGothic = League_Gothic({
 const Hero = () => {
     return (
         <>
+            <Meteors />
+            {/* <BoxesCore /> */}
+            {/* <StarsBackground /> */}
             <div className='relative'>
                 <div className='mt-20 flex flex-col items-center'>
-                    <h1 className='text-3xl font-extrabold italic text-[#FF5959]'>
+                    {/* <h1 className='text-3xl font-extrabold italic text-[#FF5959]'>
                         Hey there, I am
-                    </h1>
-                    <div className='relative'>
+                    </h1> */}
+                    <div className='relative mt-24'>
                         <h1
                             className={`${leagueGothic.className} text-9xl font-bold md:text-[16rem]`}
                         >
@@ -30,7 +36,7 @@ const Hero = () => {
                         alt='Jarvin'
                         width={750}
                         height={500}
-                        className='absolute right-0 z-[-1] object-cover'
+                        className='absolute right-0 z-[-1] hidden object-cover opacity-80 blur-sm md:block'
                     />
                 </div>
             </div>
