@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
+import TransitionLink from './TransitionLink'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
@@ -17,26 +17,14 @@ const Navbar = () => {
 
     return (
         <div className='relative'>
-            <nav className='fixed left-0 right-0 top-0 z-50 flex items-center justify-end bg-white px-6 py-4 lowercase md:justify-center'>
+            <nav className='fixed left-0 right-0 top-0 flex items-center justify-end bg-white px-6 py-4 lowercase md:justify-center'>
                 <div className='hidden space-x-8 md:flex md:justify-center'>
-                    <Link
-                        href='/'
-                        className='transition-all duration-150 hover:text-[#FF5959]'
-                    >
-                        Home
-                    </Link>
-                    <Link
-                        href='/projects'
-                        className='transition-all duration-150 hover:text-[#FF5959]'
-                    >
-                        Projects
-                    </Link>
-                    <Link
+                    <TransitionLink href='/' label='Home' />
+                    <TransitionLink href='/projects' label='Projects' />
+                    <TransitionLink
                         href='/learning-outcomes'
-                        className='transition-all duration-150 hover:text-[#FF5959]'
-                    >
-                        Learning outcomes
-                    </Link>
+                        label='Learning outcomes'
+                    />
                 </div>
 
                 <button
@@ -64,33 +52,16 @@ const Navbar = () => {
             </nav>
 
             <div
-                className={`fixed inset-x-0 bottom-0 top-[64px] z-40 transform bg-white lowercase transition-transform duration-300 ease-in-out ${
+                className={`fixed inset-x-0 bottom-0 top-[64px] z-40 transform bg-white transition-transform duration-300 ease-in-out ${
                     isOpen ? 'translate-y-0' : '-translate-y-full'
                 } md:hidden`}
             >
-                <div className='flex h-full flex-col items-center justify-center space-y-8 text-xl'>
-                    <Link
-                        href='/'
-                        className='w-full py-4 text-center transition-all duration-150 hover:text-[#FF5959]'
-                        onClick={toggleMenu}
-                    >
-                        Home
-                    </Link>
-                    <Link
-                        href='/projects'
-                        className='w-full py-4 text-center transition-all duration-150 hover:text-[#FF5959]'
-                        onClick={toggleMenu}
-                    >
-                        Projects
-                    </Link>
-                    <Link
-                        href='/learning-outcomes'
-                        className='w-full py-4 text-center transition-all duration-150 hover:text-[#FF5959]'
-                        onClick={toggleMenu}
-                    >
-                        Learning outcomes
-                    </Link>
-                </div>
+                <TransitionLink href='/' label='Home' />
+                <TransitionLink href='/projects' label='Projects' />
+                <TransitionLink
+                    href='/learning-outcomes'
+                    label='Learning outcomes'
+                />
             </div>
         </div>
     )
