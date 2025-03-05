@@ -5,9 +5,10 @@ import { animatePageOut } from '@/utils/animations'
 interface Props {
     href: string
     label: string
+    onClick?: () => void
 }
 
-const TransitionLink = ({ href, label }: Props) => {
+const TransitionLink = ({ href, label, onClick }: Props) => {
     const router = useRouter()
     const pathname = usePathname()
 
@@ -15,6 +16,7 @@ const TransitionLink = ({ href, label }: Props) => {
         if (pathname !== href) {
             animatePageOut(href, router)
         }
+        if (onClick) onClick()
     }
 
     return (
