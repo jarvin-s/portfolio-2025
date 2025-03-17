@@ -18,7 +18,7 @@ const Navbar = () => {
     return (
         <nav className='flex w-full flex-row place-items-center justify-end p-5 md:justify-center'>
             <div className='hidden gap-5 text-lg md:flex'>
-                <TransitionLink href='/' label='Home' />
+                <TransitionLink href='/' label='Index' />
                 <TransitionLink href='/projects' label='Projects' />
                 <TransitionLink
                     href='/learning-outcomes'
@@ -45,10 +45,10 @@ const Navbar = () => {
             <div
                 className={`fixed inset-0 z-40 flex flex-col items-center justify-center bg-white text-black transition-transform duration-300 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}
             >
-                <div className='flex flex-col items-center space-y-8 text-xl'>
+                <div className='flex flex-col items-center space-y-4 text-5xl'>
                     <TransitionLink
                         href='/'
-                        label='Home'
+                        label='Index'
                         onClick={toggleMenu}
                     />
                     <TransitionLink
