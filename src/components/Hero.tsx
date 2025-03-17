@@ -37,7 +37,7 @@ const Hero = () => {
         tl.fromTo(
             jarvinRef.current,
             { opacity: 0, y: 50 },
-            { opacity: 1, y: 0, duration: 1.5 }
+            { opacity: 1, y: 0, duration: 1.5, delay: 1 }
         )
 
         tl.fromTo(
@@ -50,38 +50,32 @@ const Hero = () => {
         tl.fromTo(
             imgRef.current,
             { opacity: 0 },
-            { opacity: 0.8, duration: 1.5 }
+            { opacity: 0.75, duration: 1.5 }
         )
     }, [])
 
     return (
         <>
-            {/* <Meteors /> */}
             <div className='relative'>
                 <div className='mt-20 flex flex-col items-center'>
                     <div
-                        className={`relative mt-24 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                        className={`relative top-[256px] text-center md:text-left ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
                     >
                         <h1
-                            className={`${leagueGothic.className} text-9xl font-bold md:text-[16rem]`}
+                            className={`${leagueGothic.className} text-9xl font-bold uppercase md:text-[12rem]`}
                         >
-                            <span ref={jarvinRef}>JARVIN</span>{' '}
-                            <span
-                                ref={siegersRef}
-                                className='absolute left-[33.6px] top-[95px] md:left-[67.5px] md:top-[190px]'
-                            >
-                                SIEGERS
-                            </span>
+                            <span ref={jarvinRef}>Jarvin</span>{' '}
+                            <span ref={siegersRef}>Siegers</span>
                         </h1>
                     </div>
 
                     <Image
                         ref={imgRef}
-                        src='/images/hero-oreo.jpg'
+                        src='/images/hero-oreo-2.jpg'
                         alt='Jarvin'
                         width={750}
                         height={500}
-                        className={`absolute right-0 z-[-1] hidden object-cover blur-sm md:block ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                        className={`absolute -top-[125px] z-[-1] hidden md:block`}
                     />
                 </div>
             </div>

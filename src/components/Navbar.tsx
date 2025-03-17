@@ -22,7 +22,7 @@ const Navbar = () => {
                 <TransitionLink href='/projects' label='Projects' />
                 <TransitionLink
                     href='/learning-outcomes'
-                    label='Learning Outcomes'
+                    label='Learning outcomes'
                 />
             </div>
 
@@ -32,7 +32,7 @@ const Navbar = () => {
                 aria-label='Toggle menu'
             >
                 <span
-                    className={`block h-0.5 w-6 bg-neutral-900 transition-transform duration-300 ${isOpen ? 'translate-y-2 rotate-45' : ''}`}
+                    className={`block h-0.5 w-6 bg-neutral-900 mx-auto transition-transform duration-300 ${isOpen ? 'translate-y-2 rotate-45' : ''}`}
                 ></span>
                 <span
                     className={`block h-0.5 w-6 bg-neutral-900 transition-opacity duration-300 ${isOpen ? 'opacity-0' : 'opacity-100'}`}
@@ -43,7 +43,7 @@ const Navbar = () => {
             </button>
 
             <div
-                className={`fixed inset-0 z-40 flex flex-col items-center justify-center bg-white transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+                className={`fixed inset-0 z-40 flex flex-col items-center justify-center bg-white transition-transform duration-300 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}
             >
                 <div className='flex flex-col items-center space-y-8 text-xl'>
                     <TransitionLink
@@ -58,7 +58,7 @@ const Navbar = () => {
                     />
                     <TransitionLink
                         href='/learning-outcomes'
-                        label='Learning Outcomes'
+                        label='Learning outcomes'
                         onClick={toggleMenu}
                     />
                 </div>
