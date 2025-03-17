@@ -32,18 +32,18 @@ const Navbar = () => {
                 aria-label='Toggle menu'
             >
                 <span
-                    className={`block h-0.5 w-6 bg-neutral-900 mx-auto transition-transform duration-300 ${isOpen ? 'translate-y-2 rotate-45' : ''}`}
+                    className={`mx-auto block h-0.5 w-6 bg-white transition-transform duration-300 ${isOpen ? 'translate-y-2 rotate-45 bg-black' : ''}`}
                 ></span>
                 <span
-                    className={`block h-0.5 w-6 bg-neutral-900 transition-opacity duration-300 ${isOpen ? 'opacity-0' : 'opacity-100'}`}
+                    className={`block h-0.5 w-6 bg-white transition-opacity duration-300 ${isOpen ? 'opacity-0' : 'opacity-100'}`}
                 ></span>
                 <span
-                    className={`block h-0.5 w-6 bg-neutral-900 transition-transform duration-300 ${isOpen ? '-translate-y-2 -rotate-45' : ''}`}
+                    className={`block h-0.5 w-6 bg-white transition-transform duration-300 ${isOpen ? '-translate-y-2 -rotate-45 bg-black' : ''}`}
                 ></span>
             </button>
 
             <div
-                className={`fixed inset-0 z-40 flex flex-col items-center justify-center bg-white transition-transform duration-300 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}
+                className={`fixed inset-0 z-40 flex flex-col items-center justify-center bg-white text-black transition-transform duration-300 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}
             >
                 <div className='flex flex-col items-center space-y-8 text-xl'>
                     <TransitionLink
