@@ -71,7 +71,7 @@ const Hero = () => {
 
                     <Image
                         ref={imgRef}
-                        src='/images/hero-oreo-2.jpg'
+                        src='/images/hero-oreo.jpg'
                         alt='Jarvin'
                         width={750}
                         height={500}
