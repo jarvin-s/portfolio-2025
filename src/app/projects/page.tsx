@@ -1,11 +1,8 @@
+import Projects from '@/components/Projects'
 import React from 'react'
 
-const Projects = () => {
-    return (
-        <div className='flex min-h-screen flex-col items-center justify-center'>
-            <h1 className='text-4xl font-bold'>Projects</h1>
-        </div>
-    )
+const Work = () => {
+    return <Projects />
 }
 
-export default Projects
+export default Work

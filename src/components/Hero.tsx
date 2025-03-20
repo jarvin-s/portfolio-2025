@@ -1,14 +1,11 @@
 'use client'
 
-import { League_Gothic } from 'next/font/google'
 import Image from 'next/image'
 import React, { useEffect, useRef } from 'react'
-// import { Meteors } from './ui/meteor-effect'
 import gsap from 'gsap'
-
-const leagueGothic = League_Gothic({
-    subsets: ['latin'],
-    weight: ['400'],
+import localFont from 'next/font/local'
+const drukCond = localFont({
+    src: '/../../public/fonts/DrukCond-Super-Trial.otf',
 })
 
 const Hero = () => {
@@ -56,13 +53,13 @@ const Hero = () => {
 
     return (
         <>
-            <div className='relative'>
+            <div className='hero relative'>
                 <div className='mt-20 flex flex-col items-center'>
                     <div
-                        className={`relative top-[256px] text-center md:text-left ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                        className={`relative top-[256px] z-20 text-center md:text-left ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
                     >
                         <h1
-                            className={`${leagueGothic.className} text-9xl font-bold uppercase md:text-[12rem]`}
+                            className={`${drukCond.className} text-9xl font-bold uppercase md:text-[12rem]`}
                         >
                             <span ref={jarvinRef}>Jarvin</span>{' '}
                             <span ref={siegersRef}>Siegers</span>
@@ -72,10 +69,10 @@ const Hero = () => {
                     <Image
                         ref={imgRef}
                         src='/images/hero-oreo.jpg'
-                        alt='Jarvin'
-                        width={750}
+                        alt='Hero Oreo'
+                        width={650}
                         height={500}
-                        className={`absolute -top-[125px] z-[-1] hidden md:block`}
+                        className={`absolute -top-[125px] z-[-1] hidden blur-[6px] md:block ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
                     />
                 </div>
             </div>
