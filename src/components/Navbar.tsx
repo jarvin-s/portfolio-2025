@@ -32,13 +32,21 @@ const Navbar = () => {
                 aria-label='Toggle menu'
             >
                 <span
-                    className={`mx-auto block h-0.5 w-6 bg-white transition-transform duration-300 ${isOpen ? 'translate-y-2 rotate-45 bg-black' : ''}`}
+                    className={`block h-0.5 w-6 transition-transform duration-300 ${
+                        isOpen ? 'translate-y-2 rotate-45 bg-black' : 'bg-white'
+                    }`}
                 ></span>
                 <span
-                    className={`block h-0.5 w-6 bg-white transition-opacity duration-300 ${isOpen ? 'opacity-0' : 'opacity-100'}`}
+                    className={`block h-0.5 w-6 transition-opacity duration-300 ${
+                        isOpen ? 'bg-white opacity-0' : 'bg-white opacity-100'
+                    }`}
                 ></span>
                 <span
-                    className={`block h-0.5 w-6 bg-white transition-transform duration-300 ${isOpen ? '-translate-y-2 -rotate-45 bg-black' : ''}`}
+                    className={`block h-0.5 w-6 transition-transform duration-300 ${
+                        isOpen
+                            ? '-translate-y-2 -rotate-45 bg-black'
+                            : 'bg-white'
+                    }`}
                 ></span>
             </button>
 

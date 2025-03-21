@@ -3,6 +3,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import gsap from 'gsap'
 
+// Made using AI (Claude 3.7)
 const Cursor = () => {
     const [isVisible, setIsVisible] = useState(false)
     const cursorRef = useRef(null)

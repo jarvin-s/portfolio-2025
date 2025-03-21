@@ -7,6 +7,7 @@ import localFont from 'next/font/local'
 
 const drukCond = localFont({
     src: '/../../public/fonts/DrukCond-Super-Trial.otf',
+    display: 'swap',
 })
 
 const Projects = () => {
@@ -29,15 +30,15 @@ const Projects = () => {
     useEffect(() => {
         if (titleRef.current) {
             PowerGlitch.glitch(titleRef.current, {
-                playMode: 'hover',
+                playMode: 'always',
                 createContainers: true,
                 hideOverflow: false,
                 timing: {
-                    duration: 2000,
+                    duration: 3000,
                 },
                 glitchTimeSpan: {
-                    start: 0,
-                    end: 1,
+                    start: 0.1,
+                    end: 0.8,
                 },
             })
         }
@@ -63,10 +64,12 @@ const Projects = () => {
                             }
                             onMouseLeave={() => setHoveredProject(null)}
                         >
-                            <span className='align-top text-3xl text-red-500'>
-                                {project.number}
-                            </span>{' '}
-                            {project.title}
+                            <div className='flex gap-2'>
+                                <span className='text-3xl text-red-500'>
+                                    {project.number}
+                                </span>{' '}
+                                {project.title}
+                            </div>
                         </h2>
                     </div>
                 ))}
@@ -74,7 +77,7 @@ const Projects = () => {
 
             {hoveredProject && (
                 <div
-                    className='animate-fade-in pointer-events-none fixed z-50'
+                    className='pointer-events-none fixed z-50 hidden animate-fade-in md:block'
                     style={{
                         left: `${cursorPosition.x}px`,
                         top: `${cursorPosition.y}px`,

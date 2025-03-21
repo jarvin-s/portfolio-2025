@@ -4,6 +4,8 @@ import Image from 'next/image'
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import localFont from 'next/font/local'
+import { DotBackgroundDemo } from './ui/grid-background'
+
 const drukCond = localFont({
     src: '/../../public/fonts/DrukCond-Super-Trial.otf',
 })
@@ -44,19 +46,16 @@ const Hero = () => {
             '-=0.5'
         )
 
-        tl.fromTo(
-            imgRef.current,
-            { opacity: 0 },
-            { opacity: 0.75, duration: 1.5 }
-        )
+        tl.fromTo(imgRef.current, { opacity: 0 }, { opacity: 1, duration: 1.5 })
     }, [])
 
     return (
         <>
-            <div className='hero relative'>
-                <div className='mt-20 flex flex-col items-center'>
+            <div className='relative'>
+                <DotBackgroundDemo />
+                <div className='relative z-10 mt-20 flex flex-col items-center'>
                     <div
-                        className={`relative top-[256px] z-20 text-center md:text-left ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                        className={`relative top-[256px] z-20 text-center md:text-left`}
                     >
                         <h1
                             className={`${drukCond.className} text-9xl font-bold uppercase md:text-[12rem]`}
@@ -70,9 +69,10 @@ const Hero = () => {
                         ref={imgRef}
                         src='/images/hero-oreo.jpg'
                         alt='Hero Oreo'
-                        width={650}
+                        width={750}
                         height={500}
-                        className={`absolute -top-[125px] z-[-1] hidden blur-[6px] md:block ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                        className={`absolute -top-[125px] hidden md:block ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                        priority={true}
                     />
                 </div>
             </div>
