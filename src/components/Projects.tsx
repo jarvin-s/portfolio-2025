@@ -34,11 +34,14 @@ const Projects = () => {
                 createContainers: true,
                 hideOverflow: false,
                 timing: {
-                    duration: 3000,
+                    duration: 4000,
                 },
                 glitchTimeSpan: {
-                    start: 0.1,
-                    end: 0.8,
+                    start: 0.2,
+                    end: 0.6,
+                },
+                slice: {
+                    count: 2,
                 },
             })
         }

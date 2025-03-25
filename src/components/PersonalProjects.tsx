@@ -4,6 +4,7 @@ import Image from 'next/image'
 import React, { useState, useEffect, useRef } from 'react'
 import { PowerGlitch } from 'powerglitch'
 import localFont from 'next/font/local'
+// import TransitionLink from './TransitionLink'
 
 const drukCond = localFont({
     src: '/../../public/fonts/DrukCond-Super-Trial.otf',
@@ -34,11 +35,14 @@ const PersonalProjects = () => {
                 createContainers: true,
                 hideOverflow: false,
                 timing: {
-                    duration: 3000,
+                    duration: 4000,
                 },
                 glitchTimeSpan: {
-                    start: 0.1,
-                    end: 0.8,
+                    start: 0.2,
+                    end: 0.6,
+                },
+                slice: {
+                    count: 2,
                 },
             })
         }
@@ -57,8 +61,12 @@ const PersonalProjects = () => {
             <div className='mt-20 flex flex-col justify-center'>
                 {projects.map((project) => (
                     <div key={project.title} className='py-4 uppercase'>
+                        {/* <TransitionLink
+                            href='/projects/dive-into-ive'
+                            label={project.title}
+                        /> */}
                         <h2
-                            className='mb-2 cursor-pointer text-7xl font-bold mix-blend-difference transition-colors duration-150'
+                            className='mb-2 cursor-pointer text-7xl font-bold uppercase mix-blend-difference transition-colors duration-150'
                             onMouseEnter={() =>
                                 setHoveredProject(project.title)
                             }
@@ -110,6 +118,6 @@ const projects = [
         title: 'DIVE INTO IVE',
         description: 'A collection of data, stats and info about IVE.',
         image: '/images/projects/project-ive.jpg',
-        link: 'https://diveintoive.world',
+        link: '/projects/dive-into-ive',
     },
 ]
