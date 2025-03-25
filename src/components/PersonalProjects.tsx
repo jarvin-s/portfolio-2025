@@ -10,7 +10,7 @@ const drukCond = localFont({
     display: 'swap',
 })
 
-const Projects = () => {
+const PersonalProjects = () => {
     const [hoveredProject, setHoveredProject] = useState<string | null>(null)
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
     const titleRef = useRef<HTMLHeadingElement>(null)
@@ -46,13 +46,13 @@ const Projects = () => {
 
     return (
         <div
-            className={`${drukCond.className} mt-20 flex flex-col items-center`}
+            className={`${drukCond.className} my-20 flex flex-col items-center`}
         >
             <h1
                 ref={titleRef}
                 className='px-5 text-center text-9xl font-bold uppercase text-white mix-blend-difference'
             >
-                Projects
+                Personal Projects
             </h1>
             <div className='mt-20 flex flex-col justify-center'>
                 {projects.map((project) => (
@@ -102,29 +102,14 @@ const Projects = () => {
     )
 }
 
-export default Projects
+export default PersonalProjects
 
 const projects = [
     {
         number: '01.',
-        title: 'Branding',
-        description: 'Branding for a techno artist called Boris Schmidt',
-        image: '/images/projects/project-branding.jpg',
-        // link: 'https://placehold.co/600x400',
-    },
-    {
-        number: '02.',
-        title: "Mario's Pizza",
-        description:
-            "Website built for a pizza restaurant called Mario's Pizza",
-        image: '/images/projects/project-mario.jpg',
-        // link: 'https://placehold.co/600x400',
-    },
-    {
-        number: '03.',
-        title: 'Aqua Alert',
-        description: 'Website for a water alert app',
-        image: '/images/projects/project-aqua.jpg',
-        // link: 'https://placehold.co/600x400',
+        title: 'DIVE INTO IVE',
+        description: 'A collection of data, stats and info about IVE.',
+        image: '/images/projects/project-ive.jpg',
+        link: 'https://diveintoive.world',
     },
 ]
