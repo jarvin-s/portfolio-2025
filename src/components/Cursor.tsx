@@ -39,7 +39,7 @@ const Cursor = () => {
     return (
         <div
             ref={cursorRef}
-            className={`circle-out pointer-events-none fixed z-50 hidden h-[40px] w-[40px] rounded-full border border-white md:block ${isVisible ? 'opacity-100' : 'opacity-0'}`}
+            className={`circle-out pointer-events-none fixed z-50 hidden h-[40px] w-[40px] rounded-full border border-white/40 md:block ${isVisible ? 'opacity-100' : 'opacity-0'}`}
             style={{ top: 0, left: 0 }}
         ></div>
     )

@@ -33,7 +33,7 @@ const Navbar = () => {
             >
                 <span
                     className={`block h-0.5 w-6 transition-transform duration-300 ${
-                        isOpen ? 'translate-y-2 rotate-45 bg-black' : 'bg-white'
+                        isOpen ? 'translate-y-2 rotate-45 bg-white' : 'bg-white'
                     }`}
                 ></span>
                 <span
@@ -44,14 +44,14 @@ const Navbar = () => {
                 <span
                     className={`block h-0.5 w-6 transition-transform duration-300 ${
                         isOpen
-                            ? '-translate-y-2 -rotate-45 bg-black'
+                            ? '-translate-y-2 -rotate-45 bg-white'
                             : 'bg-white'
                     }`}
                 ></span>
             </button>
 
             <div
-                className={`fixed inset-0 z-40 flex flex-col items-center justify-center bg-white text-black transition-transform duration-300 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}
+                className={`fixed inset-0 z-40 flex flex-col items-center justify-center bg-black text-white transition-transform duration-300 ease-in-out ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}
             >
                 <div className='flex flex-col items-center space-y-4 text-4xl'>
                     <TransitionLink
