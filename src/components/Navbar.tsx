@@ -27,7 +27,7 @@ const Navbar = () => {
             </div>
 
             <button
-                className='z-50 flex h-8 w-8 flex-col items-center justify-center space-y-1.5 md:hidden'
+                className='z-50 flex h-10 w-10 flex-col items-center justify-center space-y-1.5 rounded-lg duration-300 ease-in-out hover:bg-gray-200/40 md:hidden'
                 onClick={toggleMenu}
                 aria-label='Toggle menu'
             >

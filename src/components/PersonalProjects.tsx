@@ -49,7 +49,7 @@ const PersonalProjects = () => {
     }, [])
 
     return (
-        <div
+        <main
             className={`${drukCond.className} my-20 flex flex-col items-center`}
         >
             <h1
@@ -106,7 +106,7 @@ const PersonalProjects = () => {
                     />
                 </div>
             )}
-        </div>
+        </main>
     )
 }
 

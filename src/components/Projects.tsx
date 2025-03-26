@@ -48,7 +48,7 @@ const Projects = () => {
     }, [])
 
     return (
-        <div
+        <main
             className={`${drukCond.className} mt-20 flex flex-col items-center`}
         >
             <h1
@@ -101,7 +101,7 @@ const Projects = () => {
                     />
                 </div>
             )}
-        </div>
+        </main>
     )
 }
 
@@ -113,7 +113,6 @@ const projects = [
         title: 'Branding',
         description: 'Branding for a techno artist called Boris Schmidt',
         image: '/images/projects/project-branding.jpg',
-        // link: 'https://placehold.co/600x400',
     },
     {
         number: '02.',
@@ -121,13 +120,11 @@ const projects = [
         description:
             "Website built for a pizza restaurant called Mario's Pizza",
         image: '/images/projects/project-mario.jpg',
-        // link: 'https://placehold.co/600x400',
     },
     {
         number: '03.',
         title: 'Aqua Alert',
         description: 'Website for a water alert app',
         image: '/images/projects/project-aqua.jpg',
-        // link: 'https://placehold.co/600x400',
     },
 ]
