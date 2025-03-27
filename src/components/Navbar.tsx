@@ -16,7 +16,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav className='flex w-full flex-row place-items-center justify-end p-5 md:justify-center'>
+        <nav className='relative flex w-full flex-row place-items-center justify-end p-5 md:justify-center z-50'>
             <div className='hidden gap-10 text-lg md:flex'>
                 <TransitionLink href='/' label='Index' />
                 <TransitionLink href='/projects' label='Projects' />

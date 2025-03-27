@@ -4,10 +4,9 @@ import Image from 'next/image'
 import React, { useState, useEffect, useRef } from 'react'
 import { PowerGlitch } from 'powerglitch'
 import localFont from 'next/font/local'
-
+import { BackgroundGradient } from './BackgroundGradient'
 const drukCond = localFont({
     src: '/../../public/fonts/DrukCond-Super-Trial.otf',
-    display: 'swap',
 })
 
 const Projects = () => {
@@ -30,27 +29,25 @@ const Projects = () => {
     useEffect(() => {
         if (titleRef.current) {
             PowerGlitch.glitch(titleRef.current, {
-                playMode: 'always',
+                playMode: 'hover',
                 createContainers: true,
                 hideOverflow: false,
                 timing: {
-                    duration: 4000,
+                    duration: 2000,
                 },
                 glitchTimeSpan: {
-                    start: 0.2,
-                    end: 0.6,
-                },
-                slice: {
-                    count: 2,
+                    start: 0,
+                    end: 1,
                 },
             })
         }
     }, [])
 
     return (
-        <main
+        <div
             className={`${drukCond.className} mt-20 flex flex-col items-center`}
         >
+            <BackgroundGradient />
             <h1
                 ref={titleRef}
                 className='px-5 text-center text-9xl font-bold uppercase text-white mix-blend-difference'
@@ -67,12 +64,10 @@ const Projects = () => {
                             }
                             onMouseLeave={() => setHoveredProject(null)}
                         >
-                            <div className='flex gap-2'>
-                                <span className='text-3xl text-red-500'>
-                                    {project.number}
-                                </span>{' '}
-                                {project.title}
-                            </div>
+                            <span className='align-top text-3xl text-red-500'>
+                                {project.number}
+                            </span>{' '}
+                            {project.title}
                         </h2>
                     </div>
                 ))}
@@ -80,7 +75,7 @@ const Projects = () => {
 
             {hoveredProject && (
                 <div
-                    className='pointer-events-none fixed z-50 hidden animate-fade-in md:block'
+                    className='pointer-events-none fixed z-50 animate-fade-in'
                     style={{
                         left: `${cursorPosition.x}px`,
                         top: `${cursorPosition.y}px`,
@@ -101,30 +96,36 @@ const Projects = () => {
                     />
                 </div>
             )}
-        </main>
+        </div>
     )
 }
-
-export default Projects
 
 const projects = [
     {
         number: '01.',
         title: 'Branding',
         description: 'Branding for a techno artist called Boris Schmidt',
-        image: '/images/projects/project-branding.jpg',
+        image: '/images/hero-branding.jpg',
+        slug: 'branding',
+        // link: 'https://placehold.co/600x400',
     },
     {
         number: '02.',
         title: "Mario's Pizza",
         description:
             "Website built for a pizza restaurant called Mario's Pizza",
-        image: '/images/projects/project-mario.jpg',
+        image: '/images/hero-mario.jpg',
+        slug: 'marios-pizza',
+        // link: 'https://placehold.co/600x400',
     },
     {
         number: '03.',
         title: 'Aqua Alert',
         description: 'Website for a water alert app',
-        image: '/images/projects/project-aqua.jpg',
+        image: '/images/hero-aqua.jpg',
+        slug: 'aqua-alert',
+        // link: 'https://placehold.co/600x400',
     },
 ]
+
+export default Projects
