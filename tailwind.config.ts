@@ -14,7 +14,7 @@ export default {
       },
       animation: {
         "fade-in": "fadeIn 0.5s ease-in-out",
-        "first": "moveVertical 30s ease infinite",
+        "first": "moveInCircle 10s reverse infinite",
         "second": "moveInCircle 20s reverse infinite",
         "third": "moveInCircle 40s linear infinite",
         "fourth": "moveHorizontal 40s ease infinite",
