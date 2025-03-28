@@ -29,7 +29,7 @@ const Projects = () => {
     useEffect(() => {
         if (titleRef.current) {
             PowerGlitch.glitch(titleRef.current, {
-                playMode: 'hover',
+                playMode: 'always',
                 createContainers: true,
                 hideOverflow: false,
                 timing: {
