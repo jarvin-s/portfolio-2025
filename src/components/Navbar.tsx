@@ -27,25 +27,25 @@ const Navbar = () => {
             </div>
 
             <button
-                className='z-50 flex h-10 w-10 flex-col items-center justify-center space-y-1.5 rounded-lg duration-300 ease-in-out hover:bg-gray-200/40 md:hidden'
+                className='z-50 flex h-10 w-10 flex-col items-center justify-center space-y-1.5 rounded-lg duration-300 ease-in-out hover:bg-gray-200/20 md:hidden border-2 border-gray-400/40'
                 onClick={toggleMenu}
                 aria-label='Toggle menu'
             >
                 <span
-                    className={`block h-0.5 w-6 transition-transform duration-300 ${
-                        isOpen ? 'translate-y-2 rotate-45 bg-white' : 'bg-white'
+                    className={`block h-[1px] w-6 transition-transform duration-300 ${
+                        isOpen ? 'translate-y-2 rotate-45 bg-white/60' : 'bg-white/60'
                     }`}
                 ></span>
                 <span
-                    className={`block h-0.5 w-6 transition-opacity duration-300 ${
-                        isOpen ? 'bg-white opacity-0' : 'bg-white opacity-100'
+                    className={`block h-[1px] w-6 transition-opacity duration-300 ${
+                        isOpen ? 'bg-white/60 opacity-0' : 'bg-white/60 opacity-100'
                     }`}
                 ></span>
                 <span
-                    className={`block h-0.5 w-6 transition-transform duration-300 ${
+                    className={`block h-[1px] w-6 transition-transform duration-300 ${
                         isOpen
-                            ? '-translate-y-2 -rotate-45 bg-white'
-                            : 'bg-white'
+                            ? '-translate-y-2 -rotate-45 bg-white/60'
+                            : 'bg-white/60'
                     }`}
                 ></span>
             </button>

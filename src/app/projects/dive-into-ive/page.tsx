@@ -3,6 +3,10 @@
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { PowerGlitch } from 'powerglitch'
+import localFont from 'next/font/local'
+const drukCond = localFont({
+    src: '../../../../public/fonts/DrukCond-Super-Trial.otf',
+})
 
 const DiveIntoIve = () => {
     const titleRef = useRef<HTMLHeadingElement>(null)
@@ -32,7 +36,7 @@ const DiveIntoIve = () => {
             <main className='flex flex-col items-center'>
                 <h1
                     ref={titleRef}
-                    className='mb-12 px-5 text-center text-7xl font-bold uppercase text-white mix-blend-difference md:text-9xl'
+                    className={`${drukCond.className} mb-12 px-5 text-center text-7xl font-bold uppercase text-white mix-blend-difference md:text-9xl`}
                 >
                     <span className='text-pink-600'>DIVE </span>INTO{' '}
                     <span className='text-pink-600'>IVE</span>
