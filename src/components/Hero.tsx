@@ -53,7 +53,7 @@ const Hero = () => {
         <>
             <div className='relative'>
                 <DotBackgroundDemo />
-                <div className='relative z-10 mt-20 flex flex-col items-center'>
+                <div className='relative z-10 mt-40 flex flex-col items-center'>
                     <div
                         className={`relative top-[256px] z-20 text-center md:text-left`}
                     >
