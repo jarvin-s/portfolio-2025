@@ -53,12 +53,12 @@ const Hero = () => {
         <>
             <div className='relative'>
                 <DotBackgroundDemo />
-                <div className='relative z-10 mt-40 flex flex-col items-center'>
+                <div className='relative z-10 mt-0 flex flex-col items-center md:mt-40'>
                     <div
                         className={`relative top-[256px] z-20 text-center md:text-left`}
                     >
                         <h1
-                            className={`${drukCond.className} text-9xl font-bold uppercase md:text-[12rem]`}
+                            className={`${drukCond.className} text-9xl/[0.8] font-bold uppercase md:text-[12rem]`}
                         >
                             <span ref={jarvinRef}>Jarvin</span>{' '}
                             <span ref={siegersRef}>Siegers</span>
@@ -71,7 +71,7 @@ const Hero = () => {
                         alt='Hero Oreo'
                         width={750}
                         height={500}
-                        className={`absolute -top-[125px] hidden md:block ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                        className={`absolute -top-[20px] md:-top-[125px] ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
                         priority={true}
                     />
                 </div>
