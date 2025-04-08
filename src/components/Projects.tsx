@@ -5,6 +5,9 @@ import React, { useState, useEffect, useRef } from 'react'
 import { PowerGlitch } from 'powerglitch'
 import localFont from 'next/font/local'
 import { BackgroundGradient } from './BackgroundGradient'
+import { projects } from '@/data/projects'
+import TransitionLink from './TransitionLink'
+
 const drukCond = localFont({
     src: '/../../public/fonts/DrukCond-Super-Trial.otf',
 })
@@ -33,11 +36,14 @@ const Projects = () => {
                 createContainers: true,
                 hideOverflow: false,
                 timing: {
-                    duration: 2000,
+                    duration: 4000,
                 },
                 glitchTimeSpan: {
-                    start: 0,
-                    end: 1,
+                    start: 0.2,
+                    end: 0.6,
+                },
+                slice: {
+                    count: 2,
                 },
             })
         }
@@ -57,18 +63,20 @@ const Projects = () => {
             <div className='mt-20 flex flex-col justify-center'>
                 {projects.map((project) => (
                     <div key={project.title} className='py-4 uppercase'>
-                        <h2
-                            className='mb-2 cursor-pointer text-7xl font-bold mix-blend-difference transition-colors duration-150'
-                            onMouseEnter={() =>
-                                setHoveredProject(project.title)
-                            }
-                            onMouseLeave={() => setHoveredProject(null)}
-                        >
-                            <span className='align-top text-3xl text-red-500'>
-                                {project.number}
-                            </span>{' '}
-                            {project.title}
-                        </h2>
+                        <TransitionLink href={`/projects/${project.slug}`}>
+                            <h2
+                                className='mb-2 cursor-pointer text-7xl font-bold mix-blend-difference transition-colors duration-150 uppercase'
+                                onMouseEnter={() =>
+                                    setHoveredProject(project.title)
+                                }
+                                onMouseLeave={() => setHoveredProject(null)}
+                            >
+                                <span className='align-top text-3xl text-red-500'>
+                                    {project.number}
+                                </span>{' '}
+                                {project.title}
+                            </h2>
+                        </TransitionLink>
                     </div>
                 ))}
             </div>
@@ -99,33 +107,5 @@ const Projects = () => {
         </div>
     )
 }
-
-const projects = [
-    {
-        number: '01.',
-        title: 'Branding',
-        description: 'Branding for a techno artist called Boris Schmidt',
-        image: '/images/hero-branding.jpg',
-        slug: 'branding',
-        // link: 'https://placehold.co/600x400',
-    },
-    {
-        number: '02.',
-        title: "Mario's Pizza",
-        description:
-            "Website built for a pizza restaurant called Mario's Pizza",
-        image: '/images/hero-mario.jpg',
-        slug: 'marios-pizza',
-        // link: 'https://placehold.co/600x400',
-    },
-    {
-        number: '03.',
-        title: 'Aqua Alert',
-        description: 'Website for a water alert app',
-        image: '/images/hero-aqua.jpg',
-        slug: 'aqua-alert',
-        // link: 'https://placehold.co/600x400',
-    },
-]
 
 export default Projects

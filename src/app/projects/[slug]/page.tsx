@@ -1,34 +1,49 @@
 import { notFound } from 'next/navigation'
-import { projects, Project } from '@/components/Projects'
+import {
+    projects,
+    Project,
+    personalProjects,
+    PersonalProject,
+} from '@/data/projects'
 import Image from 'next/image'
 
 export function generateStaticParams() {
-    return projects.map((project: Project) => ({
+    const allProjects = [...projects, ...personalProjects]
+    return allProjects.map((project) => ({
         slug: project.slug,
     }))
 }
 
-export default function ProjectPage({ params }: { params: { slug: string } }) {
-    const project = projects.find((p: Project) => p.slug === params.slug)
+export default async function ProjectPage({
+    params,
+}: {
+    params: { slug: string }
+}) {
+    const { slug } = await params
+    const project =
+        projects.find((p: Project) => p.slug === slug) ||
+        personalProjects.find((p: PersonalProject) => p.slug === slug)
 
     if (!project) {
+        console.log('Project not found', project)
         notFound()
     }
 
     return (
-        <div className='container mx-auto py-12'>
-            <h1 className='mb-8 text-5xl font-bold'>{project.title}</h1>
-            <div className='mb-8'>
+        <div className='mt-20 flex flex-col items-center justify-center'>
+            <h1 className='mb-8 text-5xl font-bold'>{project?.title}</h1>
+            <div className='mb-8 px-4 md:px-0'>
                 <Image
-                    src={project.image}
-                    alt={project.title}
-                    className='w-full max-w-2xl rounded-lg'
-                    width={1000}
-                    height={1000}
+                    src={project?.showcase_image || ''}
+                    alt={project?.title || ''}
+                    className='w-full rounded-lg'
+                    width={1920}
+                    height={1080}
                 />
             </div>
-            <p className='text-xl'>{project.description}</p>
-            {/* Add more project details here */}
+            <p className='text-center text-xl md:text-left'>
+                {project?.description}
+            </p>
         </div>
     )
 }

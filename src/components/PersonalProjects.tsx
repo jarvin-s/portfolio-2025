@@ -4,7 +4,8 @@ import Image from 'next/image'
 import React, { useState, useEffect, useRef } from 'react'
 import { PowerGlitch } from 'powerglitch'
 import localFont from 'next/font/local'
-// import TransitionLink from './TransitionLink'
+import { personalProjects } from '@/data/projects'
+import TransitionLink from './TransitionLink'
 
 const drukCond = localFont({
     src: '/../../public/fonts/DrukCond-Super-Trial.otf',
@@ -59,26 +60,24 @@ const PersonalProjects = () => {
                 Personal Projects
             </h1>
             <div className='mt-20 flex flex-col justify-center'>
-                {projects.map((project) => (
+                {personalProjects.map((project) => (
                     <div key={project.title} className='py-4 uppercase'>
-                        {/* <TransitionLink
-                            href='/projects/dive-into-ive'
-                            label={project.title}
-                        /> */}
-                        <h2
-                            className='mb-2 cursor-pointer text-7xl font-bold uppercase mix-blend-difference transition-colors duration-150'
-                            onMouseEnter={() =>
-                                setHoveredProject(project.title)
-                            }
-                            onMouseLeave={() => setHoveredProject(null)}
-                        >
-                            <div className='flex gap-2'>
-                                <span className='text-3xl text-red-500'>
-                                    {project.number}
-                                </span>{' '}
-                                {project.title}
-                            </div>
-                        </h2>
+                        <TransitionLink href={`/projects/${project.slug}`}>
+                            <h2
+                                className='mb-2 cursor-pointer text-7xl font-bold uppercase mix-blend-difference transition-colors duration-150 uppercase'
+                                onMouseEnter={() =>
+                                    setHoveredProject(project.title)
+                                }
+                                onMouseLeave={() => setHoveredProject(null)}
+                            >
+                                <div className='flex gap-2'>
+                                    <span className='text-3xl text-red-500'>
+                                        {project.number}
+                                    </span>{' '}
+                                    {project.title}
+                                </div>
+                            </h2>
+                        </TransitionLink>
                     </div>
                 ))}
             </div>
@@ -95,8 +94,9 @@ const PersonalProjects = () => {
                 >
                     <Image
                         src={
-                            projects.find((p) => p.title === hoveredProject)
-                                ?.image || ''
+                            personalProjects.find(
+                                (p) => p.title === hoveredProject
+                            )?.image || ''
                         }
                         alt={hoveredProject}
                         width={400}
@@ -111,13 +111,3 @@ const PersonalProjects = () => {
 }
 
 export default PersonalProjects
-
-const projects = [
-    {
-        number: '01.',
-        title: 'DIVE INTO IVE',
-        description: 'A collection of data, stats and info about IVE.',
-        image: '/images/projects/project-ive.jpg',
-        link: '/projects/dive-into-ive',
-    },
-]

@@ -1,12 +1,17 @@
 'use client'
 
 import { animatePageIn } from '@/utils/animations'
+import { usePathname } from 'next/navigation'
 import { useEffect } from 'react'
 
 export default function Template({ children }: { children: React.ReactNode }) {
+    const pathname = usePathname()
+    
     useEffect(() => {
+        // Animate on initial load and when pathname changes
         animatePageIn()
-    }, [])
+    }, [pathname]) // Re-run when pathname changes
+    
     return (
         <>
             <div

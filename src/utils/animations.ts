@@ -26,6 +26,8 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
     const bannerFour = document.getElementById("banner-4")
 
     if (bannerOne && bannerTwo && bannerThree && bannerFour) {
+        gsap.killTweensOf([bannerOne, bannerTwo, bannerThree, bannerFour])
+
         const tl = gsap.timeline()
 
         tl.set([bannerOne, bannerTwo, bannerThree, bannerFour], {
@@ -37,5 +39,7 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
                 router.push(href)
             },
         })
+    } else {
+        router.push(href)
     }
 }
