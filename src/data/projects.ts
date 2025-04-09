@@ -47,16 +47,12 @@ export const projects: Project[] = [
     },
     {
         number: '03.',
-        title: 'Aqua',
+        title: 'Aqua Alert',
         description: 'Website for a water alert app',
         image: '/images/projects/glitch-aqua.jpg',
         showcase_image: '/images/projects/project-aqua.png',
         slug: 'aqua-alert',
-        link: 'https://aqua-alert.nl/',
-        titleWithColor: {
-            text: 'Alert',
-            color: '#FF7E28'
-        }
+        link: 'https://aqua-alert.nl/'
     },
 ]
 

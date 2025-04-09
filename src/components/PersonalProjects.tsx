@@ -64,7 +64,7 @@ const PersonalProjects = () => {
                     <div key={project.title} className='py-4 uppercase'>
                         <TransitionLink href={`/projects/${project.slug}`}>
                             <h2
-                                className='mb-2 cursor-pointer text-7xl font-bold uppercase mix-blend-difference transition-colors duration-150 uppercase'
+                                className='mb-2 cursor-pointer text-7xl font-bold uppercase mix-blend-difference transition-colors duration-150'
                                 onMouseEnter={() =>
                                     setHoveredProject(project.title)
                                 }
