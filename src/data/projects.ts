@@ -6,6 +6,10 @@ export interface Project {
     showcase_image?: string
     slug: string
     link?: string
+    titleWithColor?: {
+        text: string
+        color: string
+    }
 }
 
 export interface PersonalProject {
@@ -16,6 +20,10 @@ export interface PersonalProject {
     showcase_image: string
     slug: string
     link?: string
+    titleWithColor?: {
+        text: string
+        color: string
+    }
 }
 
 export const projects: Project[] = [
@@ -26,7 +34,6 @@ export const projects: Project[] = [
         image: '/images/projects/glitch-branding.jpg',
         showcase_image: '/images/projects/project-branding.png',
         slug: 'branding',
-        // link: 'https://placehold.co/600x400',
     },
     {
         number: '02.',
@@ -36,16 +43,20 @@ export const projects: Project[] = [
         image: '/images/projects/glitch-mario.jpg',
         showcase_image: '/images/projects/project-mario.png',
         slug: 'marios-pizza',
-        // link: 'https://placehold.co/600x400',
+        link: 'https://marios-pizza.vercel.app/',
     },
     {
         number: '03.',
-        title: 'Aqua Alert',
+        title: 'Aqua',
         description: 'Website for a water alert app',
         image: '/images/projects/glitch-aqua.jpg',
         showcase_image: '/images/projects/project-aqua.png',
         slug: 'aqua-alert',
-        // link: 'https://placehold.co/600x400',
+        link: 'https://aqua-alert.nl/',
+        titleWithColor: {
+            text: 'Alert',
+            color: '#FF7E28'
+        }
     },
 ]
 

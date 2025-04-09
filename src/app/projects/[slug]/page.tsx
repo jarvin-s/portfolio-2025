@@ -31,14 +31,23 @@ export default async function ProjectPage({
 
     return (
         <div className='mt-20 flex flex-col items-center justify-center'>
-            <h1 className='mb-8 text-5xl font-bold'>{project?.title}</h1>
-            <div className='mb-8 px-4 md:px-0'>
+            <h1 className='mb-8 text-5xl font-bold'>
+                {project?.title}
+                <span
+                    className='text-primary'
+                    style={{ color: project?.titleWithColor?.color }}
+                >
+                    {project?.titleWithColor?.text}
+                </span>
+            </h1>
+            <div className='mb-8 px-4'>
                 <Image
                     src={project?.showcase_image || ''}
                     alt={project?.title || ''}
                     className='w-full rounded-lg'
                     width={1920}
                     height={1080}
+                    loading='lazy'
                 />
             </div>
             <p className='text-center text-xl md:text-left'>

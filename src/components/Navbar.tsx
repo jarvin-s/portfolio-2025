@@ -31,21 +31,21 @@ const Navbar = () => {
                 aria-label='Toggle menu'
             >
                 <span
-                    className={`block h-[1px] w-6 transition-transform duration-300 ${
+                    className={`block h-[2px] w-6 transition-transform duration-300 ${
                         isOpen
                             ? 'translate-y-2 rotate-45 bg-white/60'
                             : 'bg-white/60'
                     }`}
                 ></span>
                 <span
-                    className={`block h-[1px] w-6 transition-opacity duration-300 ${
+                    className={`block h-[2px] w-6 transition-opacity duration-300 ${
                         isOpen
                             ? 'h-[2px] bg-white/60 opacity-0'
                             : 'bg-white/60 opacity-100'
                     }`}
                 ></span>
                 <span
-                    className={`block h-[1px] w-6 transition-transform duration-300 ${
+                    className={`block h-[2px] w-6 transition-transform duration-300 ${
                         isOpen
                             ? '-translate-y-2 -rotate-45 bg-white/60'
                             : 'bg-white/60'
