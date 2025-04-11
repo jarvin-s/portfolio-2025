@@ -7,6 +7,10 @@ import localFont from 'next/font/local'
 import { BackgroundGradient } from './BackgroundGradient'
 import { projects } from '@/data/projects'
 import TransitionLink from './TransitionLink'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const drukCond = localFont({
     src: '/../../public/fonts/DrukCond-Super-Trial.otf',
@@ -16,6 +20,7 @@ const Projects = () => {
     const [hoveredProject, setHoveredProject] = useState<string | null>(null)
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
     const titleRef = useRef<HTMLHeadingElement>(null)
+    const projectsRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
         const handleMouseMove = (e: MouseEvent) => {
@@ -49,23 +54,59 @@ const Projects = () => {
         }
     }, [])
 
+    useEffect(() => {
+        if (projectsRef.current) {
+            const projects =
+                projectsRef.current.querySelectorAll('.project-item')
+
+            const projectsTl = gsap.timeline({
+                defaults: { ease: 'power3.out' },
+                scrollTrigger: {
+                    trigger: projectsRef.current,
+                    start: 'top bottom-=100',
+                    toggleActions: 'play none none reverse',
+                },
+            })
+
+            projects.forEach((project, index) => {
+                projectsTl.fromTo(
+                    project,
+                    { x: 100, opacity: 0 },
+                    {
+                        x: 0,
+                        opacity: 1,
+                        duration: 1,
+                        stagger: 0.8,
+                    },
+                    index === 0 ? 1 : '-=0.4'
+                )
+            })
+        }
+    }, [])
+
     return (
         <div
             className={`${drukCond.className} mt-20 flex flex-col items-center`}
         >
             <BackgroundGradient />
             <h1
-                ref={titleRef}
+                // ref={titleRef}
                 className='px-5 text-center text-9xl font-bold uppercase text-white mix-blend-difference'
             >
                 Projects
             </h1>
-            <div className='mt-20 flex flex-col justify-center'>
+            <div
+                ref={projectsRef}
+                className='mt-20 flex flex-col justify-center'
+            >
                 {projects.map((project) => (
-                    <div key={project.title} className='py-4 uppercase'>
+                    <div
+                        key={project.title}
+                        className='project-item py-4 uppercase'
+                    >
                         <TransitionLink href={`/projects/${project.slug}`}>
                             <h2
-                                className='mb-2 cursor-pointer text-7xl font-bold mix-blend-difference transition-colors duration-150 uppercase'
+                                className='mb-2 cursor-pointer text-7xl font-bold uppercase mix-blend-difference transition-colors duration-150'
                                 onMouseEnter={() =>
                                     setHoveredProject(project.title)
                                 }
