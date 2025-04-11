@@ -14,7 +14,9 @@ export const animatePageIn = () => {
             yPercent: 0,
         }).to([bannerOne, bannerTwo, bannerThree, bannerFour], {
             yPercent: 100,
-            stagger: 0.2,
+            stagger: 0.25,
+            duration: 1,
+            ease: "power3.inOut"
         })
     }
 }
@@ -28,16 +30,19 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
     if (bannerOne && bannerTwo && bannerThree && bannerFour) {
         gsap.killTweensOf([bannerOne, bannerTwo, bannerThree, bannerFour])
 
-        const tl = gsap.timeline()
+        const tl = gsap.timeline({
+            onComplete: () => {
+                router.push(href)
+            }
+        })
 
         tl.set([bannerOne, bannerTwo, bannerThree, bannerFour], {
             yPercent: -100,
         }).to([bannerOne, bannerTwo, bannerThree, bannerFour], {
             yPercent: 0,
-            stagger: 0.2,
-            onComplete: () => {
-                router.push(href)
-            },
+            stagger: 0.25,
+            duration: 1,
+            ease: "power2.out"
         })
     } else {
         router.push(href)
