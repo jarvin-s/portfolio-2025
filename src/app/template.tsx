@@ -8,9 +8,8 @@ export default function Template({ children }: { children: React.ReactNode }) {
     const pathname = usePathname()
     
     useEffect(() => {
-        // Animate on initial load and when pathname changes
         animatePageIn()
-    }, [pathname]) // Re-run when pathname changes
+    }, [pathname])
     
     return (
         <>

@@ -4,6 +4,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Cursor from '@/components/Cursor'
 import { PostHogProvider } from '@/components/PostHogProvider'
+import SmoothScrollProvider from '@/components/SmoothScrollProvider'
 
 const inter = Inter_Tight({
     subsets: ['latin'],
@@ -32,9 +33,11 @@ export default function RootLayout({
         <html lang='en'>
             <body className={`${inter.className} antialiased`}>
                 <PostHogProvider>
-                    <Navbar />
-                    {children}
-                    <Cursor />
+                    <SmoothScrollProvider>
+                        <Navbar />
+                        {children}
+                        <Cursor />
+                    </SmoothScrollProvider>
                 </PostHogProvider>
             </body>
         </html>

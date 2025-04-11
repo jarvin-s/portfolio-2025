@@ -4,10 +4,10 @@ import Image from 'next/image'
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import localFont from 'next/font/local'
-import { DotBackgroundDemo } from './ui/grid-background'
+import { DotBackgroundDemo } from '../ui/grid-background'
 
 const drukCond = localFont({
-    src: '/../../public/fonts/DrukCond-Super-Trial.otf',
+    src: '../../../public/fonts/DrukCond-Super-Trial.otf',
 })
 
 const Hero = () => {
