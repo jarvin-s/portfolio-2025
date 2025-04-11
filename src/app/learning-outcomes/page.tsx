@@ -1,9 +1,9 @@
 import React from 'react'
-
+import Hero from '@/components/LearningOutcomes/Hero'
 const LearningOutcomes = () => {
     return (
-        <div className='flex min-h-screen flex-col items-center justify-center'>
-            <h1 className='text-4xl font-bold'>Learning outcomes</h1>
+        <div className='mt-20 flex flex-col items-center justify-center'>
+            <Hero />
         </div>
     )
 }
