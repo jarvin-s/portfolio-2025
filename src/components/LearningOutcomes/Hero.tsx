@@ -34,23 +34,20 @@ const Hero = () => {
     }, [])
 
     return (
-        <div className='relative'>
-            <div className='mb-8 text-center'>
+        <div className='relative w-full'>
+            <div className='mx-auto mb-8 max-w-md px-4 text-center md:max-w-2xl'>
                 <h1
                     ref={titleRef}
-                    className={`text-6xl font-bold lowercase md:text-7xl`}
+                    className={`text-5xl font-bold lowercase md:text-7xl`}
                 >
                     Learning Outcomes
                 </h1>
-                <p
-                    ref={subtitleRef}
-                    className='mx-auto mt-4 max-w-2xl text-xl text-gray-400'
-                >
+                <p ref={subtitleRef} className='mt-4 text-lg text-gray-400'>
                     Showcasing the skills and knowledge acquired throughout my
                     educational journey
                 </p>
             </div>
-            <div className='relative w-full max-w-3xl'>
+            <div className='relative mx-auto w-full max-w-3xl px-4'>
                 <Image
                     ref={imgRef}
                     src='/images/learning-outcomes.jpg'
