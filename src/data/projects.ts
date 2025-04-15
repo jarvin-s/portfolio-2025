@@ -37,6 +37,26 @@ export const projects: Project[] = [
     },
     {
         number: '02.',
+        title: 'Create that UX',
+        description: 'Creating a UX for Cardan',
+        image: '/images/projects/glitch-cardan.jpg',
+        showcase_image: '/images/projects/project-cardan.png',
+        slug: 'cardan',
+    },
+]
+
+export const personalProjects: PersonalProject[] = [
+    {
+        number: '01.',
+        title: 'DIVE INTO IVE',
+        description: 'A collection of data, stats and info about IVE.',
+        image: '/images/projects/glitch-ive.jpg',
+        showcase_image: '/images/projects/project-ive.png',
+        slug: 'dive-into-ive',
+        link: 'https://diveintoive.world',
+    },
+    {
+        number: '02.',
         title: "Mario's Pizza",
         description:
             "Website built for a pizza restaurant called Mario's Pizza",
@@ -53,17 +73,5 @@ export const projects: Project[] = [
         showcase_image: '/images/projects/project-aqua.png',
         slug: 'aqua-alert',
         link: 'https://aqua-alert.nl/'
-    },
-]
-
-export const personalProjects: PersonalProject[] = [
-    {
-        number: '01.',
-        title: 'DIVE INTO IVE',
-        description: 'A collection of data, stats and info about IVE.',
-        image: '/images/projects/glitch-ive.jpg',
-        showcase_image: '/images/projects/project-ive.png',
-        slug: 'dive-into-ive',
-        link: 'https://diveintoive.world',
     },
 ]

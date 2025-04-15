@@ -19,6 +19,7 @@ export default {
         "third": "moveInCircle 40s linear infinite",
         "fourth": "moveHorizontal 40s ease infinite",
         "fifth": "moveInCircle 20s ease infinite",
+        "slide-up": "slideUp 2.5s ease-in-out infinite alternate",
       },
       keyframes: {
         fadeIn: {
@@ -56,6 +57,14 @@ export default {
           },
           "100%": {
             transform: "translateY(-50%)",
+          },
+        },
+        slideUp: {
+          "0%": {
+            transform: "translateY(0)",
+          },
+          "100%": {
+            transform: "translateY(-12px)",
           },
         },
       },
