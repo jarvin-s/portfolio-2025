@@ -3,11 +3,10 @@
 import Image from 'next/image'
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import localFont from 'next/font/local'
-import { DotBackgroundDemo } from '../ui/grid-background'
-
-const drukCond = localFont({
-    src: '../../../public/fonts/DrukCond-Super-Trial.otf',
+import { Bebas_Neue } from 'next/font/google'
+const bebasNeue = Bebas_Neue({
+    subsets: ['latin'],
+    weight: '400',
 })
 
 const Hero = () => {
@@ -52,13 +51,12 @@ const Hero = () => {
     return (
         <>
             <div className='relative'>
-                <DotBackgroundDemo />
                 <div className='relative z-10 mt-0 flex flex-col items-center md:mt-40'>
                     <div
                         className={`relative top-[256px] z-20 text-center md:text-left`}
                     >
                         <h1
-                            className={`${drukCond.className} text-9xl/[0.8] font-bold uppercase md:text-[12rem]`}
+                            className={`${bebasNeue.className} text-9xl/[0.8] font-bold uppercase tracking-tighter md:text-[12rem]`}
                         >
                             <span ref={jarvinRef}>Jarvin</span>{' '}
                             <span ref={siegersRef}>Siegers</span>

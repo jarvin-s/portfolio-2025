@@ -15,18 +15,18 @@ const TransitionLink = ({ href, label, onClick, children }: Props) => {
 
     const handleClick = (e: React.MouseEvent) => {
         e.preventDefault()
-        
-        const isSameBasePath = 
-            pathname.includes('/projects/') && 
-            href.includes('/projects/') && 
+
+        const isSameBasePath =
+            pathname.includes('/projects/') &&
+            href.includes('/projects/') &&
             pathname !== href
-        
+
         if (isSameBasePath || pathname !== href) {
             animatePageOut(href, router)
         } else {
             router.push(href)
         }
-        
+
         if (onClick) onClick()
     }
 
