@@ -6,10 +6,6 @@ export interface Project {
     showcase_image?: string
     slug: string
     link?: string
-    titleWithColor?: {
-        text: string
-        color: string
-    }
 }
 
 export interface PersonalProject {
@@ -20,10 +16,6 @@ export interface PersonalProject {
     showcase_image: string
     slug: string
     link?: string
-    titleWithColor?: {
-        text: string
-        color: string
-    }
 }
 
 export const projects: Project[] = [
