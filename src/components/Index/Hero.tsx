@@ -13,7 +13,6 @@ const Hero = () => {
     const jarvinRef = useRef(null)
     const siegersRef = useRef(null)
     const imgRef = useRef(null)
-    const [isLoaded, setIsLoaded] = React.useState(false)
 
     useEffect(() => {
         if (jarvinRef.current) {
@@ -25,8 +24,6 @@ const Hero = () => {
         if (imgRef.current) {
             gsap.set(imgRef.current, { opacity: 0 })
         }
-
-        setIsLoaded(true)
     }, [])
 
     useEffect(() => {
@@ -56,7 +53,7 @@ const Hero = () => {
                         className={`relative top-[256px] z-20 text-center md:text-left`}
                     >
                         <h1
-                            className={`${bebasNeue.className} text-9xl/[0.8] font-bold uppercase tracking-tighter md:text-[12rem]`}
+                            className={`${bebasNeue.className} text-9xl/[0.8] font-bold tracking-tighter md:text-[12rem]`}
                         >
                             <span ref={jarvinRef}>Jarvin</span>{' '}
                             <span ref={siegersRef}>Siegers</span>
@@ -69,7 +66,7 @@ const Hero = () => {
                         alt='Hero Oreo'
                         width={750}
                         height={500}
-                        className={`absolute -top-[20px] md:-top-[125px] ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                        className='absolute -top-[20px] md:-top-[125px]'
                         priority={true}
                     />
                 </div>
