@@ -1,8 +1,13 @@
 'use client'
 
-import Image from 'next/image'
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
+import { Bebas_Neue } from 'next/font/google'
+
+const bebasNeue = Bebas_Neue({
+    weight: '400',
+    subsets: ['latin'],
+})
 
 const Hero = () => {
     const titleRef = useRef(null)
@@ -35,28 +40,17 @@ const Hero = () => {
 
     return (
         <div className='relative w-full'>
-            <div className='mx-auto mb-8 max-w-md px-4 text-center md:max-w-2xl'>
+            <div className='mx-auto mb-8 max-w-md px-4 text-center md:max-w-4xl'>
                 <h1
                     ref={titleRef}
-                    className={`text-5xl font-bold lowercase md:text-7xl`}
+                    className={`${bebasNeue.className} text-5xl font-bold lowercase md:text-9xl`}
                 >
                     Learning Outcomes
                 </h1>
                 <p ref={subtitleRef} className='mt-4 text-lg text-gray-400'>
                     Showcasing the skills and knowledge acquired throughout my
-                    educational journey
+                    educational journey.
                 </p>
-            </div>
-            <div className='relative mx-auto w-full max-w-3xl px-4'>
-                <Image
-                    ref={imgRef}
-                    src='/images/learning-outcomes.jpg'
-                    alt='Learning Outcomes'
-                    width={1200}
-                    height={600}
-                    className='rounded-lg shadow-lg'
-                    priority={true}
-                />
             </div>
         </div>
     )
