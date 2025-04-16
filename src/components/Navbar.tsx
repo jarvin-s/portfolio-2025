@@ -1,11 +1,14 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import TransitionLink from './TransitionLink'
 import Image from 'next/image'
+import { gsap } from 'gsap'
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
+    const navItemsRef = useRef<HTMLDivElement>(null)
+    const navRef = useRef<HTMLDivElement>(null)
 
     const toggleMenu = () => {
         setIsOpen(!isOpen)
@@ -15,6 +18,26 @@ const Navbar = () => {
             document.body.style.overflow = 'auto'
         }
     }
+
+    useEffect(() => {
+        const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+
+        tl.fromTo(navRef.current, { opacity: 0 }, { opacity: 1, duration: 1.2 })
+
+        if (isOpen && navItemsRef.current) {
+            const items = navItemsRef.current.children
+
+            gsap.set(items, { x: -50, opacity: 0 })
+            gsap.to(items, {
+                x: 0,
+                opacity: 1,
+                duration: 1.2,
+                stagger: 0.4,
+                ease: 'power3.out',
+                delay: 0.2,
+            })
+        }
+    }, [isOpen])
 
     return (
         <nav className='relative z-50 flex w-full flex-row place-items-center justify-end p-5 md:justify-center'>
@@ -55,7 +78,12 @@ const Navbar = () => {
             </button>
 
             <div
-                className={`fixed inset-0 z-40 flex flex-col bg-[linear-gradient(38deg,_#000000,_#7f1d1d9c,_#7f1d1d87,_#000000),_linear-gradient(19deg,_#000000,_#000000,_#000000)] text-6xl text-white transition-transform duration-300 ease-in-out md:justify-start ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}
+                ref={navRef}
+                className={`fixed inset-0 z-40 flex flex-col bg-[linear-gradient(38deg,_#000000,_#7f1d1d9c,_#7f1d1d87,_#000000),_linear-gradient(19deg,_#000000,_#000000,_#000000)] text-6xl text-white transition-transform duration-300 ease-in-out md:justify-start ${
+                    isOpen
+                        ? 'translate-x-0'
+                        : '-translate-x-full duration-[1200ms]'
+                }`}
             >
                 <div className='absolute left-5 top-5 flex items-center gap-2'>
                     <Image
@@ -65,7 +93,10 @@ const Navbar = () => {
                         height={50}
                     />
                 </div>
-                <div className='mt-[7.5rem] flex w-full flex-col items-start'>
+                <div
+                    ref={navItemsRef}
+                    className='mt-[7.5rem] flex w-full flex-col items-start'
+                >
                     <div className='w-full border-b border-t border-white/40 px-4 py-4'>
                         <TransitionLink href='/' label='' onClick={toggleMenu}>
                             index
