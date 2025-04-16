@@ -84,7 +84,7 @@ const PersonalProjects = () => {
                 ref={titleRef}
                 className='animate-slide-up px-5 text-center text-7xl font-bold uppercase text-white mix-blend-difference md:text-9xl'
             >
-                Personal Projects
+                Other Projects
             </h1>
             <div
                 ref={projectsRef}
