@@ -6,10 +6,6 @@ export interface Project {
     showcase_image?: string
     slug: string
     link?: string
-    titleWithColor?: {
-        text: string
-        color: string
-    }
 }
 
 export interface PersonalProject {
@@ -20,10 +16,6 @@ export interface PersonalProject {
     showcase_image: string
     slug: string
     link?: string
-    titleWithColor?: {
-        text: string
-        color: string
-    }
 }
 
 export const projects: Project[] = [
@@ -34,6 +26,26 @@ export const projects: Project[] = [
         image: '/images/projects/glitch-branding.jpg',
         showcase_image: '/images/projects/project-branding.png',
         slug: 'branding',
+    },
+    {
+        number: '02.',
+        title: 'Create that UX',
+        description: 'Creating a UX for Cardan',
+        image: '/images/projects/glitch-cardan.jpg',
+        showcase_image: '/images/projects/project-cardan.png',
+        slug: 'cardan',
+    },
+]
+
+export const personalProjects: PersonalProject[] = [
+    {
+        number: '01.',
+        title: 'DIVE INTO IVE',
+        description: 'A collection of data, stats and info about IVE.',
+        image: '/images/projects/glitch-ive.jpg',
+        showcase_image: '/images/projects/project-ive.png',
+        slug: 'dive-into-ive',
+        link: 'https://diveintoive.world',
     },
     {
         number: '02.',
@@ -53,17 +65,5 @@ export const projects: Project[] = [
         showcase_image: '/images/projects/project-aqua.png',
         slug: 'aqua-alert',
         link: 'https://aqua-alert.nl/'
-    },
-]
-
-export const personalProjects: PersonalProject[] = [
-    {
-        number: '01.',
-        title: 'DIVE INTO IVE',
-        description: 'A collection of data, stats and info about IVE.',
-        image: '/images/projects/glitch-ive.jpg',
-        showcase_image: '/images/projects/project-ive.png',
-        slug: 'dive-into-ive',
-        link: 'https://diveintoive.world',
     },
 ]
