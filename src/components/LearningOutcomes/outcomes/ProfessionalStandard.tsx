@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-const Development = () => {
+const ProfessionalStandard = () => {
     const containerRef = useRef<HTMLDivElement>(null)
     const headingRef = useRef<HTMLHeadingElement>(null)
     const textRef = useRef<HTMLParagraphElement>(null)
@@ -73,15 +73,16 @@ const Development = () => {
                             ref={headingRef}
                             className='mb-6 text-center text-4xl font-bold md:text-left md:text-6xl'
                         >
-                            Development & Version Control
+                            Professional Standard
                         </h2>
                         <p
                             ref={textRef}
                             className='text-lg leading-relaxed md:text-xl'
                         >
-                            &quot;You explore front-end development languages,
-                            you write code and document in a version control
-                            environment.&quot;
+                            &quot;You apply professional practice, both
+                            individually and in teams, in the areas of project
+                            organisation, communication with stakeholders,
+                            exploratory research, and reporting.&quot;
                         </p>
                     </div>
                 </div>
@@ -90,4 +91,4 @@ const Development = () => {
     )
 }
 
-export default Development
+export default ProfessionalStandard

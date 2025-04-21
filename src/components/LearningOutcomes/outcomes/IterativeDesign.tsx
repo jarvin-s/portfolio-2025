@@ -3,8 +3,9 @@
 import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Image from 'next/image'
 
-const Development = () => {
+const IterativeDesign = () => {
     const containerRef = useRef<HTMLDivElement>(null)
     const headingRef = useRef<HTMLHeadingElement>(null)
     const textRef = useRef<HTMLParagraphElement>(null)
@@ -22,8 +23,8 @@ const Development = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: 'top 400px',
-                    end: '400px top',
+                    start: 'top 500px',
+                    end: '500px top',
                     scrub: 0.6,
                 },
             })
@@ -60,29 +61,31 @@ const Development = () => {
                 className='mx-auto w-full max-w-6xl rounded-xl p-8 md:p-16'
             >
                 <div className='flex flex-col items-center gap-8 md:flex-row md:gap-16'>
-                    <div
-                        ref={imageRef}
-                        className='flex aspect-square w-full items-center justify-center rounded-xl bg-gradient-to-br from-red-500 to-stone-900 md:w-1/2'
-                    >
-                        <div className='text-9xl font-bold text-white'>
-                            &lt;/&gt;
-                        </div>
-                    </div>
                     <div className='w-full md:w-1/2'>
                         <h2
                             ref={headingRef}
                             className='mb-6 text-center text-4xl font-bold md:text-left md:text-6xl'
                         >
-                            Development & Version Control
+                            Iterative Design
                         </h2>
                         <p
                             ref={textRef}
                             className='text-lg leading-relaxed md:text-xl'
                         >
-                            &quot;You explore front-end development languages,
-                            you write code and document in a version control
-                            environment.&quot;
+                            &quot;You explore and use professional design tools
+                            and you iteratively design visual works.&quot;
                         </p>
+                    </div>
+                    <div
+                        ref={imageRef}
+                        className='flex aspect-square w-full items-center justify-center rounded-xl bg-gradient-to-br from-red-500 to-stone-900 md:w-1/2'
+                    >
+                        <Image
+                            src='/icons/figma.svg'
+                            alt='Figma'
+                            width={128}
+                            height={128}
+                        />
                     </div>
                 </div>
             </div>
@@ -90,4 +93,4 @@ const Development = () => {
     )
 }
 
-export default Development
+export default IterativeDesign
