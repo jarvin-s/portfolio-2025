@@ -64,8 +64,8 @@ const Hero = () => {
                         ref={imgRef}
                         src='/images/hero-oreo.jpg'
                         alt='Hero Oreo'
-                        width={750}
-                        height={500}
+                        width={700}
+                        height={700}
                         className='absolute -top-[20px] md:-top-[125px]'
                         priority={true}
                     />
