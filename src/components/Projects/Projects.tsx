@@ -2,8 +2,9 @@
 
 import Image from 'next/image'
 import React, { useState, useEffect, useRef } from 'react'
-import { personalProjects } from '@/data/projects'
-import TransitionLink from './TransitionLink'
+import { BackgroundGradient } from '../BackgroundGradient'
+import { projects } from '@/data/projects'
+import TransitionLink from '../TransitionLink'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Bebas_Neue } from 'next/font/google'
@@ -15,7 +16,7 @@ const bebasNeue = Bebas_Neue({
     weight: '400',
 })
 
-const PersonalProjects = () => {
+const Projects = () => {
     const [hoveredProject, setHoveredProject] = useState<string | null>(null)
     const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 })
     const titleRef = useRef<HTMLHeadingElement>(null)
@@ -34,6 +35,14 @@ const PersonalProjects = () => {
     }, [])
 
     useEffect(() => {
+        const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
+
+        tl.fromTo(
+            titleRef.current,
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 1, delay: 1 }
+        )
+
         if (projectsRef.current) {
             const projects =
                 projectsRef.current.querySelectorAll('.project-item')
@@ -47,7 +56,7 @@ const PersonalProjects = () => {
                 },
             })
 
-            projects.forEach((project) => {
+            projects.forEach((project, index) => {
                 projectsTl.fromTo(
                     project,
                     { x: 100, opacity: 0 },
@@ -56,41 +65,29 @@ const PersonalProjects = () => {
                         opacity: 1,
                         duration: 1,
                         stagger: 0.8,
-                    }
+                    },
+                    index === 0 ? 2 : '-=0.4'
                 )
             })
-        }
-
-        if (titleRef.current) {
-            gsap.timeline({
-                scrollTrigger: {
-                    trigger: titleRef.current,
-                    start: 'top bottom-=100',
-                    toggleActions: 'play none none reverse',
-                },
-            }).fromTo(
-                titleRef.current,
-                { opacity: 0, y: 30 },
-                { opacity: 1, y: 0, duration: 1 }
-            )
         }
     }, [])
 
     return (
-        <main
-            className={`${bebasNeue.className} mt-80 flex flex-col items-center`}
+        <div
+            className={`${bebasNeue.className} mt-20 flex flex-col items-center`}
         >
+            <BackgroundGradient />
             <h1
                 ref={titleRef}
                 className='animate-slide-up px-5 text-center text-7xl font-bold uppercase text-white mix-blend-difference md:text-9xl'
             >
-                Other Projects
+                Projects
             </h1>
             <div
                 ref={projectsRef}
                 className='mt-20 flex flex-col justify-center'
             >
-                {personalProjects.map((project) => (
+                {projects.map((project) => (
                     <div
                         key={project.title}
                         className='project-item py-4 uppercase'
@@ -103,12 +100,10 @@ const PersonalProjects = () => {
                                 }
                                 onMouseLeave={() => setHoveredProject(null)}
                             >
-                                <div className='flex gap-2'>
-                                    <span className='text-3xl text-red-500'>
-                                        {project.number}
-                                    </span>{' '}
-                                    {project.title}
-                                </div>
+                                <span className='align-top text-3xl text-red-500'>
+                                    {project.number}
+                                </span>{' '}
+                                {project.title}
                             </h2>
                         </TransitionLink>
                     </div>
@@ -117,7 +112,7 @@ const PersonalProjects = () => {
 
             {hoveredProject && (
                 <div
-                    className='pointer-events-none fixed z-50 hidden animate-fade-in md:block'
+                    className='pointer-events-none fixed z-50 animate-fade-in'
                     style={{
                         left: `${cursorPosition.x}px`,
                         top: `${cursorPosition.y}px`,
@@ -127,9 +122,8 @@ const PersonalProjects = () => {
                 >
                     <Image
                         src={
-                            personalProjects.find(
-                                (p) => p.title === hoveredProject
-                            )?.image || ''
+                            projects.find((p) => p.title === hoveredProject)
+                                ?.image || ''
                         }
                         alt={hoveredProject}
                         width={400}
@@ -139,8 +133,8 @@ const PersonalProjects = () => {
                     />
                 </div>
             )}
-        </main>
+        </div>
     )
 }
 
-export default PersonalProjects
+export default Projects
