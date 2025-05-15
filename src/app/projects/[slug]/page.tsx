@@ -6,6 +6,8 @@ import {
     PersonalProject,
 } from '@/data/projects'
 import Image from 'next/image'
+import dynamic from 'next/dynamic'
+import { capitalize } from '@/utils/string'
 
 export function generateStaticParams() {
     const allProjects = [...projects, ...personalProjects]
@@ -29,6 +31,21 @@ export default async function ProjectPage({
         notFound()
     }
 
+    const componentName = capitalize(slug)
+
+    const ProjectComponent = dynamic(
+        () =>
+            import(`@/components/Projects/ProjectList/${componentName}`)
+                .then((mod) => mod.default)
+                .catch(() => {
+                    console.log(
+                        `Component for ${componentName} not found, using default view`
+                    )
+                    return () => null
+                }),
+        { ssr: true }
+    )
+
     return (
         <div className='mt-20 flex flex-col items-center justify-center'>
             <h1 className='mb-8 text-5xl font-bold'>{project?.title}</h1>
@@ -42,6 +59,11 @@ export default async function ProjectPage({
                     loading='lazy'
                 />
             </div>
+
+            {/* Render project-specific component if it exists */}
+            <ProjectComponent />
+
+            {/* Always show default description */}
             <p className='text-center text-xl md:text-left'>
                 {project?.description}
             </p>
