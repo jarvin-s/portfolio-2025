@@ -50,7 +50,7 @@ const Navbar = () => {
             </div>
 
             <button
-                className='group z-50 flex h-10 flex-col justify-center space-y-1 duration-300 ease-in-out md:hidden'
+                className='fixed right-5 top-5 z-50 flex h-10 flex-col justify-center space-y-1 duration-300 ease-in-out md:hidden'
                 onClick={toggleMenu}
                 aria-label='Toggle menu'
             >
