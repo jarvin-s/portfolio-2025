@@ -35,6 +35,14 @@ export const projects: Project[] = [
         showcase_image: '/images/projects/project-cardan.png',
         slug: 'cardan',
     },
+    {
+        number: '03.',
+        title: 'Cardan',
+        description: 'Digital accessability for Cardan',
+        image: '/images/projects/glitch-cardan.jpg',
+        showcase_image: '/images/projects/project-cardan.png',
+        slug: 'cardan',
+    },
 ]
 
 export const personalProjects: PersonalProject[] = [
