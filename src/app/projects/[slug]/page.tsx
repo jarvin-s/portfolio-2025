@@ -8,6 +8,7 @@ import {
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import { capitalize } from '@/utils/string'
+import TransitionLink from '@/components/TransitionLink'
 
 export function generateStaticParams() {
     const allProjects = [...projects, ...personalProjects]
@@ -48,12 +49,23 @@ export default async function ProjectPage({
 
     return (
         <div className='mt-20 flex flex-col items-center justify-center'>
-            <h1 className='mb-8 text-5xl font-bold'>{project?.title}</h1>
-            <div className='mb-8 px-4'>
+            <div className='flex flex-col'>
+                <h1 className='mb-4 text-2xl opacity-50'>PROJECT</h1>
+                <h1 className='mb-2 text-3xl font-bold md:text-9xl'>
+                    {project?.title}
+                </h1>
+                <div className='mb-8 flex gap-2 self-start'>
+                    <TransitionLink href='/projects'>
+                        <ArrowLeftIcon />
+                        Back to all projects
+                    </TransitionLink>
+                </div>
+            </div>
+            <div className='mb-8'>
                 <Image
                     src={project?.showcase_image || ''}
                     alt={project?.title || ''}
-                    className='w-full rounded-lg'
+                    className='w-full'
                     width={1920}
                     height={1080}
                     loading='lazy'
@@ -62,11 +74,22 @@ export default async function ProjectPage({
 
             {/* Render project-specific component if it exists */}
             <ProjectComponent />
-
-            {/* Always show default description */}
-            <p className='text-center text-xl md:text-left'>
-                {project?.description}
-            </p>
         </div>
+    )
+}
+
+const ArrowLeftIcon = () => {
+    return (
+        <svg
+            xmlns='http://www.w3.org/2000/svg'
+            width='24'
+            height='24'
+            viewBox='0 0 24 24'
+        >
+            <path
+                fill='currentColor'
+                d='m10 18l-6-6l6-6l1.4 1.45L7.85 11H20v2H7.85l3.55 3.55z'
+            />
+        </svg>
     )
 }
