@@ -14,9 +14,9 @@ export const animatePageIn = () => {
             yPercent: 0,
         }).to([bannerOne, bannerTwo, bannerThree, bannerFour], {
             yPercent: 100,
-            stagger: 0.25,
+            stagger: 0.05,
             duration: 1,
-            ease: "power3.inOut"
+            ease: "expo.inOut"
         })
     }
 }
@@ -40,9 +40,9 @@ export const animatePageOut = (href: string, router: AppRouterInstance) => {
             yPercent: -100,
         }).to([bannerOne, bannerTwo, bannerThree, bannerFour], {
             yPercent: 0,
-            stagger: 0.25,
+            stagger: 0.05,
             duration: 1,
-            ease: "power2.out"
+            ease: "expo.out"
         })
     } else {
         router.push(href)
