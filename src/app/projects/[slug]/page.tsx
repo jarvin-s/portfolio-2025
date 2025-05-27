@@ -10,6 +10,13 @@ import dynamic from 'next/dynamic'
 import { capitalize } from '@/utils/string'
 import TransitionLink from '@/components/TransitionLink'
 
+// Map slugs to component names
+const slugToComponentMap: Record<string, string> = {
+    'create-that-ux': 'CreateThatUX',
+    branding: 'Branding',
+    development: 'Development',
+}
+
 export function generateStaticParams() {
     const allProjects = [...projects, ...personalProjects]
     return allProjects.map((project) => ({
@@ -32,7 +39,7 @@ export default async function ProjectPage({
         notFound()
     }
 
-    const componentName = capitalize(slug)
+    const componentName = slugToComponentMap[slug] || capitalize(slug)
 
     const ProjectComponent = dynamic(
         () =>

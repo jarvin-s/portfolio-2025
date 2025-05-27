@@ -11,7 +11,7 @@ const Branding = () => {
             <div className='mx-auto flex max-w-2xl flex-col justify-center px-4 md:px-0'>
                 <div className='max-w-sm md:max-w-2xl'>
                     <h3 className='mb-2 text-2xl font-semibold md:text-6xl'>
-                        Project overview
+                        Project Overview
                     </h3>
                     <p className='mt-4 text-base md:text-left md:text-lg'>
                         I created a branding for a techno artist named Boris
@@ -181,6 +181,29 @@ const Branding = () => {
                             follow an artist depends on the music, appearance,
                             and image, especially with K-pop.&quot;
                         </p>
+                    </div>
+                </div>
+
+                {/* Meeting Boris */}
+                <div className='max-w-sm px-4 md:max-w-2xl md:px-0'>
+                    <h3 className='mb-2 text-2xl font-semibold md:text-3xl'>
+                        Meeting Boris
+                    </h3>
+                    <p className='text-base md:text-lg'>
+                        During the Branding project, we had a meeting with Boris
+                        to discuss the designs we had made. Based on his
+                        feedback we continued with our work.
+                    </p>
+                    <div className='mt-4 flex flex-col'>
+                        <p className='font-bold'>
+                            Below is the video of my part of the meeting with
+                            Boris.
+                        </p>
+                        <video
+                            src='/videos/boris-meeting.mp4'
+                            className='mt-4'
+                            controls
+                        />
                     </div>
                 </div>
 

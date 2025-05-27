@@ -32,7 +32,7 @@ export const projects: Project[] = [
         title: 'Create that UX',
         description: 'Creating a UX for Cardan',
         image: '/images/projects/glitch-cardan.jpg',
-        showcase_image: '/images/projects/project-cardan.png',
+        showcase_image: '/images/projects/project-create-that-ux.png',
         slug: 'create-that-ux',
     },
     {
@@ -40,7 +40,7 @@ export const projects: Project[] = [
         title: 'Development',
         description: 'Digital accessability for Cardan',
         image: '/images/projects/glitch-cardan.jpg',
-        showcase_image: '/images/projects/project-cardan.png',
+        showcase_image: '/images/projects/project-development.png',
         slug: 'development',
     },
 ]
