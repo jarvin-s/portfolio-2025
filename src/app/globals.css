@@ -13,3 +13,36 @@ body {
     color: var(--foreground);
     background: var(--background);
 }
+
+/* Swiper */
+.swiper {
+    width: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-prev {
+    background-image: url(/icons/arrow-circle-left.svg) !important;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+}
+
+.swiper-button-next {
+    background-image: url(/icons/arrow-circle-right.svg) !important;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+}
+
+.swiper-button-next::after {
+    display: none;
+}
+
+.swiper-button-prev::after {
+    display: none;
+}

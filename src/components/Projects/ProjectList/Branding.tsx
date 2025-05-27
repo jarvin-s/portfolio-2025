@@ -1,6 +1,8 @@
 'use client'
 
+import BrandingSwiper from '@/components/BrandingSwiper'
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 const Branding = () => {
@@ -11,15 +13,37 @@ const Branding = () => {
                     <h3 className='mb-2 text-2xl font-semibold md:text-6xl'>
                         Project overview
                     </h3>
-                    <p className='text-base md:text-left md:text-lg'>
+                    <p className='mt-4 text-base md:text-left md:text-lg'>
                         I created a branding for a techno artist named Boris
                         Schmidt to promote his music.
                     </p>
+                    <Link
+                        href='https://www.figma.com/design/OCiXVPDe0LuBUgKbfiqAXR/Fontys---Media-semester-2?node-id=0-1'
+                        target='_blank'
+                        className='mt-2 flex items-center gap-1 text-lg text-blue-400 transition-colors hover:text-blue-300'
+                    >
+                        View Figma
+                        <svg
+                            xmlns='http://www.w3.org/2000/svg'
+                            width='24'
+                            height='24'
+                            viewBox='0 0 24 24'
+                        >
+                            <path
+                                fill='none'
+                                stroke='currentColor'
+                                strokeLinecap='round'
+                                strokeLinejoin='round'
+                                strokeWidth='2'
+                                d='M12 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6m-7 1l9-9m-5 0h5v5'
+                            />
+                        </svg>
+                    </Link>
                 </div>
             </div>
 
-            <div className='mt-20 flex flex-col items-center gap-10 px-4 md:gap-20 md:px-0'>
-                <div className='max-w-sm md:max-w-2xl'>
+            <div className='mt-20 flex flex-col items-center gap-10 md:gap-20'>
+                <div className='max-w-sm px-4 md:max-w-2xl md:px-0'>
                     <h3 className='mb-2 text-2xl font-semibold md:text-3xl'>
                         The Client
                     </h3>
@@ -30,7 +54,7 @@ const Branding = () => {
                     </p>
                 </div>
 
-                <div className='max-w-sm md:max-w-2xl'>
+                <div className='max-w-sm px-4 md:max-w-2xl md:px-0'>
                     <h3 className='mb-2 text-2xl font-semibold md:text-3xl'>
                         Moodboard
                     </h3>
@@ -49,7 +73,7 @@ const Branding = () => {
                 </div>
 
                 {/* Stylescapes */}
-                <div className='max-w-sm md:max-w-2xl'>
+                <div className='max-w-sm px-4 md:max-w-2xl md:px-0'>
                     <h3 className='mb-2 text-2xl font-semibold md:text-3xl'>
                         Stylescapes
                     </h3>
@@ -76,7 +100,7 @@ const Branding = () => {
                 </div>
 
                 {/* Logos */}
-                <div className='max-w-sm md:max-w-2xl'>
+                <div className='max-w-sm px-4 md:max-w-2xl md:px-0'>
                     <h3 className='mb-2 text-2xl font-semibold md:text-3xl'>
                         Logos
                     </h3>
@@ -85,15 +109,93 @@ const Branding = () => {
                         process of creating logos consisted of doing research
                         and bringing every single idea to life.
                     </p>
-                    <div className='flex flex-col gap-4'>
+                    <div className='flex flex-col'>
+                        <BrandingSwiper />
+                    </div>
+                </div>
+
+                {/* Merch */}
+                <div className='max-w-sm px-4 md:max-w-2xl md:px-0'>
+                    <h3 className='mb-2 text-2xl font-semibold md:text-3xl'>
+                        Merchandise
+                    </h3>
+                    <p className='text-base md:text-lg'>
+                        I created merchandise concepts, with a fitting tour
+                        name. The logo on the front and tour dates along with
+                        the tour name on the back.
+                    </p>
+                    <div className='flex flex-col'>
                         <Image
-                            src='/images/projects/branding/logos-1.jpg'
-                            alt='Logo'
+                            src='/images/projects/branding/merch.jpg'
+                            alt='Merch'
                             width={1920}
                             height={1080}
                             className='mt-4'
                         />
                     </div>
+                </div>
+
+                {/* Album Covers */}
+                <div className='max-w-sm px-4 md:max-w-2xl md:px-0'>
+                    <h3 className='mb-2 text-2xl font-semibold md:text-3xl'>
+                        Album Covers
+                    </h3>
+                    <p className='text-base md:text-lg'>
+                        I created a couple album covers, with our chosen colour
+                        palette and my own logos.
+                    </p>
+                    <div className='flex flex-col'>
+                        <Image
+                            src='/images/projects/branding/albums.jpg'
+                            alt='Album 1'
+                            width={1920}
+                            height={1080}
+                            className='mt-4'
+                        />
+                    </div>
+                </div>
+
+                {/* Interviews */}
+                <div className='max-w-sm px-4 md:max-w-2xl md:px-0'>
+                    <h3 className='mb-2 text-2xl font-semibold md:text-3xl'>
+                        Interviews
+                    </h3>
+                    <p className='text-base md:text-lg'>
+                        During the Branding project, our group held interviews
+                        on different topics. My topic was &quot;Discovering New
+                        Artists&quot;, you will find a summary of this below:
+                    </p>
+                    <div className='mt-4 flex flex-col'>
+                        <p className='mb-4 font-bold'>
+                            &quot;The interviewee (25) listens to music daily,
+                            mainly K-pop, Indie, and Pop. He discovers new
+                            artists through fandoms, family, and social media.
+                            He enjoys attending concerts but not festivals.
+                            Social media (Instagram, TikTok) plays a significant
+                            role in his music choices.
+                        </p>
+                        <p className='font-bold'>
+                            He uses Spotify, creates his own playlists, and
+                            typically discovers new music by chance through
+                            social media or algorithms. Whether he continues to
+                            follow an artist depends on the music, appearance,
+                            and image, especially with K-pop.&quot;
+                        </p>
+                    </div>
+                </div>
+
+                {/* Reflection */}
+                <div className='max-w-sm px-4 md:max-w-2xl md:px-0'>
+                    <h3 className='mb-2 text-2xl font-semibold md:text-3xl'>
+                        Reflection
+                    </h3>
+                    <p className='text-base md:text-lg'>
+                        Overall, I am happy with the outcome of the branding
+                        project. The client was happy with the results and I
+                        learned a lot about branding and design. Something I
+                        could improve on is definitely the stylescapes. In my
+                        opinion, the process could have been better.
+                    </p>
                 </div>
             </div>
         </div>
