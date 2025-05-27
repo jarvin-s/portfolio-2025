@@ -10,7 +10,6 @@ import dynamic from 'next/dynamic'
 import { capitalize } from '@/utils/string'
 import TransitionLink from '@/components/TransitionLink'
 
-// Map slugs to component names
 const slugToComponentMap: Record<string, string> = {
     'create-that-ux': 'CreateThatUX',
     branding: 'Branding',
