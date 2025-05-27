@@ -33,15 +33,15 @@ export const projects: Project[] = [
         description: 'Creating a UX for Cardan',
         image: '/images/projects/glitch-cardan.jpg',
         showcase_image: '/images/projects/project-cardan.png',
-        slug: 'cardan',
+        slug: 'create-that-ux',
     },
     {
         number: '03.',
-        title: 'Cardan',
+        title: 'Development',
         description: 'Digital accessability for Cardan',
         image: '/images/projects/glitch-cardan.jpg',
         showcase_image: '/images/projects/project-cardan.png',
-        slug: 'cardan',
+        slug: 'development',
     },
 ]
 
