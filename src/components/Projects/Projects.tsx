@@ -112,7 +112,7 @@ const Projects = () => {
 
             {hoveredProject && (
                 <div
-                    className='pointer-events-none fixed z-50 animate-fade-in'
+                    className='pointer-events-none fixed z-50 hidden animate-fade-in md:block'
                     style={{
                         left: `${cursorPosition.x}px`,
                         top: `${cursorPosition.y}px`,

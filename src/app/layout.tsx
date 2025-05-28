@@ -13,11 +13,12 @@ const inter = Inter_Tight({
 export const metadata: Metadata = {
     metadataBase: new URL('https://portfolio-jarvin.vercel.app'),
     title: 'Jarvin Siegers - Portfolio',
-    description: 'Portfolio website for Jarvin Siegers, a software developer',
+    description:
+        'Portfolio of Jarvin Siegers, a Frontend Developer based in the Netherlands.',
     openGraph: {
         title: 'Jarvin Siegers - Portfolio',
         description:
-            'Portfolio website for Jarvin Siegers, a software developer',
+            'Portfolio of Jarvin Siegers, a Frontend Developer based in the Netherlands.',
         images: [
             {
                 url: '/images/hero-oreo.jpg',

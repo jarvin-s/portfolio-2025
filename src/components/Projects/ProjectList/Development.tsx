@@ -65,7 +65,9 @@ const Development = () => {
         const initializeAnimations = () => {
             setInitialStates()
 
-            const showcaseImage = document.querySelector('.showcase-image') as HTMLImageElement
+            const showcaseImage = document.querySelector(
+                '.showcase-image'
+            ) as HTMLImageElement
             if (showcaseImage) {
                 showcaseImageRef.current = showcaseImage
                 if (showcaseImage.complete) {
@@ -225,7 +227,10 @@ const Development = () => {
         return () => {
             clearTimeout(timer)
             if (showcaseImageRef.current) {
-                showcaseImageRef.current.removeEventListener('load', startAnimations)
+                showcaseImageRef.current.removeEventListener(
+                    'load',
+                    startAnimations
+                )
             }
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
         }
@@ -236,12 +241,6 @@ const Development = () => {
             imageRefs.current.push(el)
         }
     }
-
-    // const addToTextRefs = (el: HTMLDivElement | null) => {
-    //     if (el && !textSectionRefs.current.includes(el)) {
-    //         textSectionRefs.current.push(el)
-    //     }
-    // }
 
     return (
         <div className='my-8 overflow-x-hidden md:overflow-visible'>
@@ -291,7 +290,6 @@ const Development = () => {
                     We divided the tasks in 2 halves, and I was responsible for
                     the following pages: Cognitive, Motor & Dyslexia.
                 </p>
-                <div className='flex gap-4'></div>
             </div>
 
             {/* Development Process */}
@@ -315,6 +313,9 @@ const Development = () => {
                 <div className='flex flex-col gap-4 md:flex-row'>
                     <ProjectLink href='https://github.com/jarvin-s/cardan'>
                         View GitHub Repository
+                    </ProjectLink>
+                    <ProjectLink href='/files/development/ai-prompts.pdf'>
+                        View AI Prompts
                     </ProjectLink>
                 </div>
             </div>
