@@ -2,13 +2,14 @@
 
 import ProjectLink from '@/components/LearningOutcomes/ProjectLink'
 import Image from 'next/image'
-import React, { useEffect, useRef, useLayoutEffect } from 'react'
+import React, { useRef, useLayoutEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const CreateThatUX = () => {
     const imageRefs = useRef<(HTMLImageElement | null)[]>([])
     const textSectionRefs = useRef<(HTMLDivElement | null)[]>([])
+    const showcaseImageRef = useRef<HTMLImageElement | null>(null)
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger)
@@ -49,11 +50,24 @@ const CreateThatUX = () => {
                 }
             })
         }
-        setInitialStates()
-    }, [])
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
+        const initializeAnimations = () => {
+            setInitialStates()
+
+            const showcaseImage = document.querySelector('.showcase-image') as HTMLImageElement
+            if (showcaseImage) {
+                showcaseImageRef.current = showcaseImage
+                if (showcaseImage.complete) {
+                    startAnimations()
+                } else {
+                    showcaseImage.addEventListener('load', startAnimations)
+                }
+            } else {
+                startAnimations()
+            }
+        }
+
+        const startAnimations = () => {
             const tl = gsap.timeline()
             tl.fromTo(
                 '.project-overview h3',
@@ -166,10 +180,15 @@ const CreateThatUX = () => {
                     )
                 }
             })
-        }, 50)
+        }
+
+        const timer = setTimeout(initializeAnimations, 50)
 
         return () => {
             clearTimeout(timer)
+            if (showcaseImageRef.current) {
+                showcaseImageRef.current.removeEventListener('load', startAnimations)
+            }
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
         }
     }, [])

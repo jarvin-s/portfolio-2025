@@ -1,15 +1,15 @@
 'use client'
 
 import ProjectLink from '@/components/LearningOutcomes/ProjectLink'
-import React, { useRef, useLayoutEffect, useEffect } from 'react'
+import React, { useRef, useLayoutEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const Development = () => {
     const imageRefs = useRef<(HTMLImageElement | null)[]>([])
     const videoRef = useRef<HTMLVideoElement>(null)
-
     const textSectionRefs = useRef<(HTMLDivElement | null)[]>([])
+    const showcaseImageRef = useRef<HTMLImageElement | null>(null)
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger)
@@ -61,11 +61,24 @@ const Development = () => {
                 })
             }
         }
-        setInitialStates()
-    }, [])
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
+        const initializeAnimations = () => {
+            setInitialStates()
+
+            const showcaseImage = document.querySelector('.showcase-image') as HTMLImageElement
+            if (showcaseImage) {
+                showcaseImageRef.current = showcaseImage
+                if (showcaseImage.complete) {
+                    startAnimations()
+                } else {
+                    showcaseImage.addEventListener('load', startAnimations)
+                }
+            } else {
+                startAnimations()
+            }
+        }
+
+        const startAnimations = () => {
             const tl = gsap.timeline()
             tl.fromTo(
                 '.project-overview h3',
@@ -205,10 +218,15 @@ const Development = () => {
                     }
                 )
             }
-        }, 50)
+        }
+
+        const timer = setTimeout(initializeAnimations, 50)
 
         return () => {
             clearTimeout(timer)
+            if (showcaseImageRef.current) {
+                showcaseImageRef.current.removeEventListener('load', startAnimations)
+            }
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
         }
     }, [])
