@@ -9,6 +9,7 @@ import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import { capitalize } from '@/utils/string'
 import TransitionLink from '@/components/TransitionLink'
+import { Suspense } from 'react'
 
 const slugToComponentMap: Record<string, string> = {
     'create-that-ux': 'CreateThatUX',
@@ -68,20 +69,15 @@ export default async function ProjectPage({
                 </div>
             </div>
             <div className='mb-8'>
-                <Image
-                    src={project?.showcase_image || ''}
-                    alt={project?.title || ''}
-                    className='w-full'
-                    width={1920}
-                    height={1080}
-                    onLoad={() => {
-                        if (typeof window !== 'undefined') {
-                            import('gsap/ScrollTrigger').then(({ ScrollTrigger }) => {
-                                ScrollTrigger.refresh()
-                            })
-                        }
-                    }}
-                />
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Image
+                        src={project?.showcase_image || ''}
+                        alt={project?.title || ''}
+                        className='w-full'
+                        width={1920}
+                        height={1080}
+                    />
+                </Suspense>
             </div>
 
             {/* Render project-specific component if it exists */}
