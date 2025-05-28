@@ -32,8 +32,16 @@ export const projects: Project[] = [
         title: 'Create that UX',
         description: 'Creating a UX for Cardan',
         image: '/images/projects/glitch-cardan.jpg',
-        showcase_image: '/images/projects/project-cardan.png',
-        slug: 'cardan',
+        showcase_image: '/images/projects/project-create-that-ux.png',
+        slug: 'create-that-ux',
+    },
+    {
+        number: '03.',
+        title: 'Development',
+        description: 'Digital accessibility website for Cardan',
+        image: '/images/projects/glitch-cardan.jpg',
+        showcase_image: '/images/projects/project-development.png',
+        slug: 'development',
     },
 ]
 
@@ -42,7 +50,7 @@ export const personalProjects: PersonalProject[] = [
         number: '01.',
         title: 'DIVE INTO IVE',
         description: 'A collection of data, stats and info about IVE.',
-        image: '/images/projects/glitch-ive.jpg',
+        image: '/images/projects/glitch-IVE.jpg',
         showcase_image: '/images/projects/project-ive.png',
         slug: 'dive-into-ive',
         link: 'https://diveintoive.world',
