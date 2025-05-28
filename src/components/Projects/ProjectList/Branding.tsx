@@ -242,7 +242,7 @@ const Branding = () => {
                     }
                 )
             }
-        }, 50)
+        }, 100)
 
         return () => {
             clearTimeout(timer)
