@@ -116,7 +116,7 @@ const InteractiveMedia = () => {
                                     users an authentic understanding of what
                                     it&apos;s like to live with a disability.
                                 </p>
-                                <div className='flex gap-4'>
+                                <div className='flex flex-col gap-4 md:flex-row'>
                                     <ProjectLink href='https://www.figma.com/proto/HOaKHvzGYPiUdqkCOMPzHC/Project-UX?page-id=35%3A3&node-id=46-41&p=f&viewport=1913%2C-601%2C0.06&t=Vcd38LeDdoipriPB-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=46%3A41'>
                                         View Figma Prototype
                                     </ProjectLink>

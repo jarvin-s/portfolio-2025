@@ -50,7 +50,7 @@ export const personalProjects: PersonalProject[] = [
         number: '01.',
         title: 'DIVE INTO IVE',
         description: 'A collection of data, stats and info about IVE.',
-        image: '/images/projects/glitch-ive.jpg',
+        image: '/images/projects/glitch-IVE.jpg',
         showcase_image: '/images/projects/project-ive.png',
         slug: 'dive-into-ive',
         link: 'https://diveintoive.world',
