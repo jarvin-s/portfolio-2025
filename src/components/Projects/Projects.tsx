@@ -74,12 +74,12 @@ const Projects = () => {
 
     return (
         <div
-            className={`${bebasNeue.className} mt-20 flex flex-col items-center`}
+            className={`${bebasNeue.className} mt-20 flex flex-col items-center px-0`}
         >
             <BackgroundGradient />
             <h1
                 ref={titleRef}
-                className='animate-slide-up px-5 text-center text-7xl font-bold uppercase text-white mix-blend-difference md:text-9xl'
+                className='animate-slide-up px-5 text-center text-7xl font-bold uppercase -tracking-[0.075em] text-white mix-blend-difference md:text-9xl md:tracking-normal'
             >
                 Projects
             </h1>
@@ -94,7 +94,7 @@ const Projects = () => {
                     >
                         <TransitionLink href={`/projects/${project.slug}`}>
                             <h2
-                                className='mb-2 cursor-pointer text-5xl font-bold uppercase mix-blend-difference transition-colors duration-150 md:text-7xl'
+                                className='mb-2 cursor-pointer text-5xl font-bold uppercase -tracking-[0.075em] mix-blend-difference transition-colors duration-150 md:text-7xl md:tracking-normal'
                                 onMouseEnter={() =>
                                     setHoveredProject(project.title)
                                 }

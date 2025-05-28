@@ -5,8 +5,10 @@ import React from 'react'
 const Work = () => {
     return (
         <>
-            <Projects />
-            <PersonalProjects />
+            <div className='overflow-x-hidden'>
+                <Projects />
+                <PersonalProjects />
+            </div>
         </>
     )
 }
