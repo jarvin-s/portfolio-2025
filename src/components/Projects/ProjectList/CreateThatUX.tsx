@@ -44,7 +44,6 @@ const CreateThatUX = () => {
                     gsap.set(image, {
                         x: xStart,
                         opacity: 0,
-                        scale: 0.9,
                         rotationY: isEven ? 10 : -10,
                     })
                 }
@@ -159,7 +158,7 @@ const CreateThatUX = () => {
                             scrollTrigger: {
                                 trigger: image,
                                 start: 'top 80%',
-                                end: 'bottom 20%',
+                                end: 'bottom 60%',
                                 toggleActions: 'play none none reverse',
                                 scrub: true,
                             },

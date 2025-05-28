@@ -48,7 +48,6 @@ const Branding = () => {
                     gsap.set(image, {
                         x: xStart,
                         opacity: 0,
-                        scale: 0.9,
                         rotationY: isEven ? -10 : 10,
                     })
                 }
@@ -70,7 +69,6 @@ const Branding = () => {
                 gsap.set(videoRef.current, {
                     x: xStart,
                     opacity: 0,
-                    scale: 0.9,
                 })
             }
         }
@@ -228,12 +226,10 @@ const Branding = () => {
                     {
                         x: xStart,
                         opacity: 0,
-                        scale: 0.9,
                     },
                     {
                         x: '0%',
                         opacity: 1,
-                        scale: 1,
                         duration: 1.2,
                         ease: 'power3.out',
                         scrollTrigger: {

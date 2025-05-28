@@ -45,7 +45,6 @@ const Development = () => {
                     gsap.set(image, {
                         x: xStart,
                         opacity: 0,
-                        scale: 0.9,
                         rotationY: isEven ? 10 : -10,
                     })
                 }
