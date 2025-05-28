@@ -36,7 +36,6 @@ const Branding = () => {
                     gsap.set([heading, paragraph, ...additionalContent], {
                         opacity: 0,
                         y: 50,
-                        filter: 'blur(10px)',
                     })
                 }
             })
@@ -50,7 +49,6 @@ const Branding = () => {
                         x: xStart,
                         opacity: 0,
                         scale: 0.9,
-                        filter: 'blur(15px)',
                         rotationY: isEven ? -10 : 10,
                     })
                 }
@@ -61,7 +59,6 @@ const Branding = () => {
                     x: '-25%',
                     opacity: 0,
                     rotationY: 15,
-                    filter: 'blur(20px)',
                 })
             }
 
@@ -74,7 +71,6 @@ const Branding = () => {
                     x: xStart,
                     opacity: 0,
                     scale: 0.9,
-                    filter: 'blur(15px)',
                 })
             }
         }
@@ -137,7 +133,6 @@ const Branding = () => {
                         .to(heading, {
                             opacity: 1,
                             y: 0,
-                            filter: 'blur(0px)',
                             duration: 1,
                             ease: 'power3.out',
                         })
@@ -146,7 +141,6 @@ const Branding = () => {
                             {
                                 opacity: 1,
                                 y: 0,
-                                filter: 'blur(0px)',
                                 duration: 0.8,
                                 ease: 'power2.out',
                             },
@@ -159,7 +153,6 @@ const Branding = () => {
                             {
                                 opacity: 1,
                                 y: 0,
-                                filter: 'blur(0px)',
                                 duration: 0.6,
                                 stagger: 0.2,
                                 ease: 'power2.out',
@@ -174,16 +167,14 @@ const Branding = () => {
                 gsap.fromTo(
                     swiperRef.current,
                     {
-                        x: '-25%',
+                        x: '-50%',
                         opacity: 0,
                         rotationY: 15,
-                        filter: 'blur(20px)',
                     },
                     {
                         opacity: 1,
                         x: 0,
                         rotationY: 0,
-                        filter: 'blur(0px)',
                         duration: 1.5,
                         ease: 'power3.out',
                         scrollTrigger: {
@@ -207,15 +198,11 @@ const Branding = () => {
                         {
                             x: xStart,
                             opacity: 0,
-                            scale: 0.9,
-                            filter: 'blur(15px)',
                             rotationY: isEven ? -10 : 10,
                         },
                         {
                             x: '0%',
                             opacity: 1,
-                            scale: 1,
-                            filter: 'blur(0px)',
                             rotationY: 0,
                             duration: 1.2,
                             ease: 'power3.out',
@@ -242,13 +229,11 @@ const Branding = () => {
                         x: xStart,
                         opacity: 0,
                         scale: 0.9,
-                        filter: 'blur(15px)',
                     },
                     {
                         x: '0%',
                         opacity: 1,
                         scale: 1,
-                        filter: 'blur(0px)',
                         duration: 1.2,
                         ease: 'power3.out',
                         scrollTrigger: {
@@ -282,7 +267,7 @@ const Branding = () => {
     }
 
     return (
-        <div className='my-8 overflow-x-hidden'>
+        <div className='my-8 overflow-x-hidden md:overflow-visible'>
             <div className='mx-auto flex max-w-2xl flex-col justify-center px-4 md:px-0'>
                 <div
                     className='project-overview max-w-sm md:max-w-2xl'
