@@ -74,7 +74,13 @@ export default async function ProjectPage({
                     className='w-full'
                     width={1920}
                     height={1080}
-                    priority
+                    onLoad={() => {
+                        if (typeof window !== 'undefined') {
+                            import('gsap/ScrollTrigger').then(({ ScrollTrigger }) => {
+                                ScrollTrigger.refresh()
+                            })
+                        }
+                    }}
                 />
             </div>
 
