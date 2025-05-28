@@ -18,8 +18,8 @@ const IterativeDesign = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: 'top 500px',
-                    end: '500px top',
+                    start: 'top 90%',
+                    end: 'bottom 90%',
                     scrub: 0.6,
                 },
             })

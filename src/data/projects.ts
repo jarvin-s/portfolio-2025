@@ -38,7 +38,7 @@ export const projects: Project[] = [
     {
         number: '03.',
         title: 'Development',
-        description: 'Digital accessability for Cardan',
+        description: 'Digital accessibility website for Cardan',
         image: '/images/projects/glitch-cardan.jpg',
         showcase_image: '/images/projects/project-development.png',
         slug: 'development',

@@ -17,8 +17,8 @@ const Development = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: 'top 400px',
-                    end: '400px top',
+                    start: 'top 90%',
+                    end: 'bottom 90%',
                     scrub: 0.6,
                 },
             })
@@ -72,7 +72,14 @@ const Development = () => {
                                     During the Development project, I utilized
                                     GitHub to manage our codebase and
                                     collaborate effectively with my project
-                                    partner.
+                                    partner. We began by creating separate
+                                    branches for each part of the website. At
+                                    the end of each week, we submitted pull
+                                    requests to merge our work into the main
+                                    branch. Additionally, we used GitHub
+                                    Projects and Issues to track our progress,
+                                    organizing tasks visually through a Kanban
+                                    board.
                                 </p>
                                 <p className='mb-4 text-lg text-gray-200'>
                                     Moreover, I&apos;ve used Git for numerous

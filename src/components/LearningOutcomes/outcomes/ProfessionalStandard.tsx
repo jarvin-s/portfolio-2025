@@ -17,8 +17,8 @@ const ProfessionalStandard = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: 'top 300px',
-                    end: '300px top',
+                    start: 'top 90%',
+                    end: 'bottom 90%',
                     scrub: 0.6,
                 },
             })
