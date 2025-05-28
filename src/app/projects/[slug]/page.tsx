@@ -9,7 +9,6 @@ import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import { capitalize } from '@/utils/string'
 import TransitionLink from '@/components/TransitionLink'
-import { Suspense } from 'react'
 
 const slugToComponentMap: Record<string, string> = {
     'create-that-ux': 'CreateThatUX',
@@ -69,16 +68,14 @@ export default async function ProjectPage({
                 </div>
             </div>
             <div className='mb-8'>
-                <Suspense fallback={<div>Loading...</div>}>
-                    <Image
-                        src={project?.showcase_image || ''}
-                        alt={project?.title || ''}
-                        className='w-full'
-                        width={1920}
-                        height={1080}
-                        loading='lazy'
-                    />
-                </Suspense>
+                <Image
+                    src={project?.showcase_image || ''}
+                    alt={project?.title || ''}
+                    className='w-full showcase-image'
+                    width={1920}
+                    height={1080}
+                    loading='lazy'
+                />
             </div>
 
             {/* Render project-specific component if it exists */}

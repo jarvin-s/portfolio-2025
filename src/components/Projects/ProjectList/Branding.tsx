@@ -2,7 +2,7 @@
 
 import BrandingSwiper from '@/components/BrandingSwiper'
 import Image from 'next/image'
-import React, { useEffect, useRef, useLayoutEffect } from 'react'
+import React, { useRef, useLayoutEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ProjectLink from '@/components/LearningOutcomes/ProjectLink'
@@ -12,6 +12,7 @@ const Branding = () => {
     const videoRef = useRef<HTMLVideoElement>(null)
     const textSectionRefs = useRef<(HTMLDivElement | null)[]>([])
     const swiperRef = useRef<HTMLDivElement>(null)
+    const showcaseImageRef = useRef<HTMLImageElement | null>(null)
 
     useLayoutEffect(() => {
         gsap.registerPlugin(ScrollTrigger)
@@ -73,11 +74,23 @@ const Branding = () => {
             }
         }
 
-        setInitialStates()
-    }, [])
+        const initializeAnimations = () => {
+            setInitialStates()
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
+            const showcaseImage = document.querySelector('.showcase-image') as HTMLImageElement
+            if (showcaseImage) {
+                showcaseImageRef.current = showcaseImage
+                if (showcaseImage.complete) {
+                    startAnimations()
+                } else {
+                    showcaseImage.addEventListener('load', startAnimations)
+                }
+            } else {
+                startAnimations()
+            }
+        }
+
+        const startAnimations = () => {
             const tl = gsap.timeline()
             tl.fromTo(
                 '.project-overview h3',
@@ -161,31 +174,6 @@ const Branding = () => {
                 }
             })
 
-            if (swiperRef.current) {
-                gsap.fromTo(
-                    swiperRef.current,
-                    {
-                        x: '-50%',
-                        opacity: 0,
-                        rotationY: 15,
-                    },
-                    {
-                        opacity: 1,
-                        x: 0,
-                        rotationY: 0,
-                        duration: 1.5,
-                        ease: 'power3.out',
-                        scrollTrigger: {
-                            trigger: swiperRef.current,
-                            start: 'top 80%',
-                            end: 'bottom 20%',
-                            toggleActions: 'play none none reverse',
-                            scrub: true,
-                        },
-                    }
-                )
-            }
-
             imageRefs.current.forEach((image, index) => {
                 if (image) {
                     const isEven = index % 2 === 0
@@ -216,6 +204,31 @@ const Branding = () => {
                 }
             })
 
+            if (swiperRef.current) {
+                gsap.fromTo(
+                    swiperRef.current,
+                    {
+                        x: '-50%',
+                        opacity: 0,
+                        rotationY: 15,
+                    },
+                    {
+                        opacity: 1,
+                        x: 0,
+                        rotationY: 0,
+                        duration: 1.5,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: swiperRef.current,
+                            start: 'top 80%',
+                            end: 'bottom 20%',
+                            toggleActions: 'play none none reverse',
+                            scrub: true,
+                        },
+                    }
+                )
+            }
+
             if (videoRef.current) {
                 const videoIndex = imageRefs.current.length
                 const isEven = videoIndex % 2 === 0
@@ -242,10 +255,15 @@ const Branding = () => {
                     }
                 )
             }
-        }, 100)
+        }
+
+        const timer = setTimeout(initializeAnimations, 100)
 
         return () => {
             clearTimeout(timer)
+            if (showcaseImageRef.current) {
+                showcaseImageRef.current.removeEventListener('load', startAnimations)
+            }
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
         }
     }, [])
