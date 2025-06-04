@@ -30,7 +30,7 @@ const OutcomeNavigation: React.FC<OutcomeNavigationProps> = ({
         )
     }, [])
     return (
-        <div className='sticky top-4 z-10 mb-8 flex justify-center'>
+        <div className='sticky top-16 z-10 mb-8 flex justify-center md:top-4'>
             <div
                 ref={pillsRef}
                 className='flex gap-2 rounded-full bg-black/20 p-2 backdrop-blur-sm'

@@ -242,6 +242,12 @@ const Development = () => {
         }
     }
 
+    const addToTextRefs = (el: HTMLDivElement | null) => {
+        if (el && !textSectionRefs.current.includes(el)) {
+            textSectionRefs.current.push(el)
+        }
+    }
+
     return (
         <div className='my-8 overflow-x-hidden md:overflow-visible'>
             <div className='mx-auto flex max-w-2xl flex-col justify-center px-4 md:px-0'>
@@ -329,8 +335,8 @@ const Development = () => {
                     User Testing
                 </h3>
                 <p className='mb-4 text-base md:text-lg'>
-                    After a big part of the development was done, we both held
-                    some user tests.
+                    After completing a significant part of the development, we
+                    conducted user tests together.
                 </p>
                 <div className='flex flex-col gap-4 md:flex-row'>
                     <ProjectLink href='/files/ux-report.pdf'>
@@ -341,7 +347,7 @@ const Development = () => {
 
             {/* Showcase */}
             <div
-                className='mt-20 max-w-sm px-4 pb-[20rem] md:max-w-2xl md:px-0'
+                className='mt-20 max-w-sm px-4 md:max-w-2xl md:px-0'
                 ref={addToRefs}
             >
                 <h3 className='mb-2 text-2xl font-semibold md:text-3xl'>
@@ -362,6 +368,33 @@ const Development = () => {
                     <ProjectLink href='https://cardan-groep-1.vercel.app/'>
                         View Website
                     </ProjectLink>
+                </div>
+            </div>
+
+            {/* Reflection */}
+            <div
+                className='mt-20 max-w-sm px-4 pb-[30rem] md:max-w-2xl md:px-0'
+                ref={addToTextRefs}
+            >
+                <h3 className='mb-2 text-2xl font-semibold md:text-3xl'>
+                    Reflection
+                </h3>
+                <div className='flex flex-col gap-4' ref={addToRefs}>
+                    <p className='text-base md:text-lg'>
+                        I really enjoyed this project. Since I had prior
+                        experience and it being the field I am interested in, it
+                        was definitely one of my favourite projects to work on.
+                        As mentioned earlier, due to my prior experience, I was
+                        able to guide my duo partner through the development
+                        process and introduce them to the framework we used. In
+                        the end, both of us learned a lot from this project and
+                        we both grew as developers.
+                    </p>
+                    <p className='text-base md:text-lg'>
+                        Overall, the client was happy with the final product.
+                        They were very appreciative of our work and the effort
+                        we put into the project.
+                    </p>
                 </div>
             </div>
         </div>
