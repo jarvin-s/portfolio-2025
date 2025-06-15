@@ -54,7 +54,9 @@ const CreateThatUX = () => {
         const initializeAnimations = () => {
             setInitialStates()
 
-            const showcaseImage = document.querySelector('.showcase-image') as HTMLImageElement
+            const showcaseImage = document.querySelector(
+                '.showcase-image'
+            ) as HTMLImageElement
             if (showcaseImage) {
                 showcaseImageRef.current = showcaseImage
                 if (showcaseImage.complete) {
@@ -187,7 +189,10 @@ const CreateThatUX = () => {
         return () => {
             clearTimeout(timer)
             if (showcaseImageRef.current) {
-                showcaseImageRef.current.removeEventListener('load', startAnimations)
+                showcaseImageRef.current.removeEventListener(
+                    'load',
+                    startAnimations
+                )
             }
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
         }
@@ -296,8 +301,8 @@ const CreateThatUX = () => {
 
                 {/* Prototype */}
                 <div
-                    className='max-w-sm px-4 pb-[20rem] md:max-w-2xl md:px-0'
-                    ref={addToTextRefs}
+                    className='max-w-sm px-4 md:max-w-2xl md:px-0'
+                    ref={addToRefs}
                 >
                     <h3 className='mb-2 text-2xl font-semibold md:text-3xl'>
                         Prototype
@@ -310,6 +315,37 @@ const CreateThatUX = () => {
                         <ProjectLink href='https://www.figma.com/proto/HOaKHvzGYPiUdqkCOMPzHC/Project-UX?page-id=35%3A3&node-id=46-41&p=f&viewport=1913%2C-601%2C0.06&t=Vcd38LeDdoipriPB-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=46%3A41'>
                             View Figma Prototype
                         </ProjectLink>
+                    </div>
+                </div>
+
+                {/* Reflection */}
+                <div
+                    className='max-w-sm px-4 pb-[20rem] md:max-w-2xl md:px-0'
+                    ref={addToTextRefs}
+                >
+                    <h3 className='mb-2 text-2xl font-semibold md:text-3xl'>
+                        Reflection
+                    </h3>
+                    <div ref={addToRefs} className='flex flex-col gap-4'>
+                        <p className='text-base md:text-lg'>
+                            I am very satisfied with the outcome of this
+                            project. Our group collaborated effectively, with
+                            everyone contributing and completing their tasks on
+                            time. I gained valuable insights into UX design
+                            through feedback from both the client and our
+                            teachers. Additionally, it was a valuable experience
+                            to work with a real client, which provided a real
+                            view on the design process.
+                        </p>
+                        <p className='text-base md:text-lg'>
+                            After each review, we carefully considered the
+                            feedback and iterated on our designs, resulting in
+                            significant improvements. Throughout this project, I
+                            developed a better understanding of the importance
+                            of client communication and successfully applying
+                            feedback. Overall, the client was happy with the
+                            final result.
+                        </p>
                     </div>
                 </div>
             </div>
