@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ProjectLink from '../ProjectLink'
+import TransitionLink from '../TransitionLink'
 
 const Development = () => {
     const containerRef = useRef<HTMLDivElement>(null)
@@ -123,6 +124,9 @@ const Development = () => {
                                     <ProjectLink href='https://cardan-groep-1.vercel.app/'>
                                         View Development Project
                                     </ProjectLink>
+                                    <TransitionLink href='/projects/project-x'>
+                                        View Project X
+                                    </TransitionLink>
                                     <ProjectLink href='https://i558462.hera.fontysict.net/'>
                                         View Exercises
                                     </ProjectLink>
