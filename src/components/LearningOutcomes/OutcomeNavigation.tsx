@@ -13,6 +13,7 @@ const outcomes = [
     { id: 'development', label: 'Development' },
     { id: 'iterative-design', label: 'Iterative Design' },
     { id: 'professional-standard', label: 'Professional Standard' },
+    { id: 'personal-leadership', label: 'Personal Leadership' },
 ]
 
 const OutcomeNavigation: React.FC<OutcomeNavigationProps> = ({

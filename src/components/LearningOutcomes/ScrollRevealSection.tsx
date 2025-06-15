@@ -5,6 +5,7 @@ import InteractiveMedia from './outcomes/InteractiveMedia'
 import Development from './outcomes/Development'
 import IterativeDesign from './outcomes/IterativeDesign'
 import ProfessionalStandard from './outcomes/ProfessionalStandard'
+import PersonalLeadership from './outcomes/PersonalLeadership'
 import OutcomeNavigation from './OutcomeNavigation'
 
 const ScrollRevealSection = () => {
@@ -24,6 +25,7 @@ const ScrollRevealSection = () => {
                 'development',
                 'iterative-design',
                 'professional-standard',
+                'personal-leadership',
             ]
 
             const scrollPosition = window.scrollY + 600
@@ -66,6 +68,9 @@ const ScrollRevealSection = () => {
             </div>
             <div id='professional-standard'>
                 <ProfessionalStandard />
+            </div>
+            <div id='personal-leadership'>
+                <PersonalLeadership />
             </div>
         </>
     )

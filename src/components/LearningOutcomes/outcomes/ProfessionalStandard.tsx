@@ -4,7 +4,6 @@ import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import TransitionLink from '../TransitionLink'
-import ProjectLink from '../ProjectLink'
 
 const ProfessionalStandard = () => {
     const containerRef = useRef<HTMLDivElement>(null)
@@ -43,7 +42,7 @@ const ProfessionalStandard = () => {
     }, [])
 
     return (
-        <div className='flex items-center justify-center pb-[30rem]'>
+        <div className='flex items-center justify-center'>
             <div
                 ref={containerRef}
                 className='mx-auto w-full max-w-4xl rounded-xl p-8 md:p-16'
@@ -110,25 +109,6 @@ const ProfessionalStandard = () => {
                                         View Project 3
                                     </TransitionLink>
                                 </div>
-                                <p className='mb-4 text-lg text-gray-200'>
-                                    Between the second and third projects, I
-                                    attended The Art Department event at the
-                                    Klokgebouw in Eindhoven, as well as a
-                                    company visit to LiveWall, organised by
-                                    Salve Mundi. The LiveWall visit was
-                                    particularly insightful, as it&apos;s a
-                                    company I&apos;ve been interested in for
-                                    both internship opportunities and potential
-                                    future employment.
-                                </p>
-                                <div className='flex flex-col gap-4 md:flex-row'>
-                                    <ProjectLink href='/files/professional-standard/the-art-department.pdf'>
-                                        View The Art Department
-                                    </ProjectLink>
-                                    <ProjectLink href='/files/professional-standard/livewall-visit.pdf'>
-                                        View LiveWall Visit
-                                    </ProjectLink>
-                                </div>
                                 <h4 className='text-xl font-bold uppercase'>
                                     Problem-solving and learning ability
                                 </h4>
@@ -143,6 +123,9 @@ const ProfessionalStandard = () => {
                                 <div className='flex flex-col gap-4 md:flex-row'>
                                     <TransitionLink href='/projects/development'>
                                         View Project 3
+                                    </TransitionLink>
+                                    <TransitionLink href='/projects/project-x'>
+                                        View Project 4
                                     </TransitionLink>
                                 </div>
                             </div>
