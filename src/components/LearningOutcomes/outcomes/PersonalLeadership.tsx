@@ -19,7 +19,7 @@ const PersonalLeadership = () => {
                     trigger: containerRef.current,
                     start: 'top 90%',
                     end: 'bottom 90%',
-                    scrub: 0.6,
+                    scrub: 0.2,
                 },
             })
 
@@ -101,12 +101,16 @@ const PersonalLeadership = () => {
                                     </p>
                                     <p className='text-lg text-gray-200'>
                                         More of this can be found by clicking
-                                        the link below.
+                                        the link below. Along with my personal
+                                        reflections of each portfolio round.
                                     </p>
                                 </div>
                                 <div className='flex flex-col gap-4 md:flex-row'>
                                     <ProjectLink href='/files/feedpulse-feedback.pdf'>
                                         View Feedback
+                                    </ProjectLink>
+                                    <ProjectLink href='/files/personal-leadership/portfolio-rounds-reflections.pdf'>
+                                        View Portfolio Rounds
                                     </ProjectLink>
                                 </div>
                                 <h4 className='text-xl font-bold uppercase'>
@@ -118,9 +122,9 @@ const PersonalLeadership = () => {
                                     Klokgebouw in Eindhoven, as well as a
                                     company visit to LiveWall, organised by
                                     Salve Mundi. The LiveWall visit was
-                                    particularly insightful, as it&apos;s a
-                                    company I&apos;ve been interested in for
-                                    both internship opportunities and potential
+                                    particularly insightful, as it is a company
+                                    I have been interested in for both
+                                    internship opportunities and potential
                                     future employment.
                                 </p>
                                 <div className='flex flex-col gap-4 md:flex-row'>
@@ -158,8 +162,41 @@ const PersonalLeadership = () => {
                                     The next semester I have chosen for Frontend
                                     Development. I chose this as my first
                                     semester as this is the field I want to work
-                                    in later.
+                                    in later. It is also the subject I am most
+                                    motivated for to do next semester.
                                 </p>
+                                <h4 className='text-xl font-bold uppercase'>
+                                    Personal Leadership Workshop 1
+                                </h4>
+                                <p className='mb-4 text-lg text-gray-200'>
+                                    Guido gave a workshop on core values, where
+                                    I had to reflect on my own core values and
+                                    then compare them with my classmates. This
+                                    helped me understand whether I give a good
+                                    impression and how my values are perceived
+                                    by others. Eventually, you combine 3 to 4 of
+                                    your best core values.
+                                </p>
+                                <div className='flex flex-col gap-4 md:flex-row'>
+                                    <ProjectLink href='/files/personal-leadership/personal-leadership-workshop.pdf'>
+                                        View Workshop
+                                    </ProjectLink>
+                                </div>
+                                <h4 className='text-xl font-bold uppercase'>
+                                    Personal Leadership Workshop 2
+                                </h4>
+                                <p className='mb-4 text-lg text-gray-200'>
+                                    Guido assigned us the task of identifying
+                                    which Belbin team role best fits each team
+                                    member, including ourselves. At the end, we
+                                    presented our findings and determined which
+                                    roles are missing in our team.
+                                </p>
+                                <div className='flex flex-col gap-4 md:flex-row'>
+                                    <ProjectLink href='/files/personal-leadership/personal-leadership-workshop-2.pdf'>
+                                        View Workshop
+                                    </ProjectLink>
+                                </div>
                             </div>
                         </div>
                     </div>

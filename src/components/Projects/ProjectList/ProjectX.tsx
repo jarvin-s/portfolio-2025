@@ -334,7 +334,7 @@ const ProjectX = () => {
                     ref={videoRef}
                 />
                 <div className='mt-4 flex flex-col gap-4 md:flex-row'>
-                    <ProjectLink href='https://aespa-quiz.vercel.app/'>
+                    <ProjectLink href='https://aespa.fun/'>
                         View Website
                     </ProjectLink>
                 </div>
