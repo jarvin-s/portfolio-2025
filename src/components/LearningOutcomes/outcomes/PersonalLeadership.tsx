@@ -17,8 +17,8 @@ const PersonalLeadership = () => {
             const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: containerRef.current,
-                    start: 'top 90%',
-                    end: 'bottom 90%',
+                    start: 'top 100%',
+                    end: 'bottom 100%',
                     scrub: 0.2,
                 },
             })
@@ -163,7 +163,14 @@ const PersonalLeadership = () => {
                                     Development. I chose this as my first
                                     semester as this is the field I want to work
                                     in later. It is also the subject I am most
-                                    motivated for to do next semester.
+                                    motivated for to do next semester. After
+                                    this semester, I plan to choose the Mobile
+                                    App Development. I am very interested in
+                                    building native apps, as it is something I
+                                    would really like to explore further. It
+                                    also has some similarities to web
+                                    development, which makes it a natural next
+                                    step for me.
                                 </p>
                                 <h4 className='text-xl font-bold uppercase'>
                                     Personal Leadership Workshop 1
