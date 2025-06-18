@@ -43,6 +43,14 @@ export const projects: Project[] = [
         showcase_image: '/images/projects/project-development.png',
         slug: 'development',
     },
+    {
+        number: '04.',
+        title: 'Project X',
+        description: 'An interactive quiz app for the k-pop group aespa',
+        image: '/images/projects/glitch-aespa.jpg',
+        showcase_image: '/images/projects/project-x-aespa.jpg',
+        slug: 'project-x',
+    },
 ]
 
 export const personalProjects: PersonalProject[] = [

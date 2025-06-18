@@ -268,35 +268,65 @@ const CreateThatUX = () => {
                     className='max-w-sm px-4 md:max-w-2xl md:px-0'
                     ref={addToRefs}
                 >
-                    <h3 className='mb-2 text-2xl font-semibold md:text-3xl'>
-                        Design
-                    </h3>
-                    <p className='text-base md:text-lg'>
-                        I designed the cognitive impairment station, focusing on
-                        ADHD specifically. The goal of this station was to
-                        simulate the experience of someone with ADHD, using
-                        pop-up notifications to distract the user while writing
-                        an email. I created multiple versions of this station,
-                        all of which are shown below in order (left to right,
-                        top to bottom). The images are arranged in two rows,
-                        progressing from version 1 to version 6.
-                    </p>
-                    <Image
-                        src='/images/projects/create-that-ux/cognitive-station-design-1.jpg'
-                        alt='ADHD Station 1'
-                        width={1920}
-                        height={1080}
-                        className='mt-4'
-                        ref={addToRefs}
-                    />
-                    <Image
-                        src='/images/projects/create-that-ux/cognitive-station-design-2.jpg'
-                        alt='ADHD Station 2'
-                        width={1920}
-                        height={1080}
-                        className='mt-4'
-                        ref={addToRefs}
-                    />
+                    <div className='flex flex-col gap-4'>
+                        <h3 className='text-2xl font-semibold md:text-3xl'>
+                            Design
+                        </h3>
+                        <p className='text-base md:text-lg'>
+                            I designed the cognitive impairment station,
+                            focusing on ADHD specifically. The goal of this
+                            station was to simulate the experience of someone
+                            with ADHD, using pop-up notifications to distract
+                            the user while writing an email. I created multiple
+                            versions of this station, all of which are shown
+                            below in order (left to right, top to bottom). The
+                            images are arranged in two rows, progressing from
+                            version 1 to version 6.
+                        </p>
+                        <h3 className='text-2xl font-semibold md:text-3xl'>
+                            Versions 1 to 3
+                        </h3>
+                        <p className='text-base md:text-lg'>
+                            The design process started with the idea of a typing
+                            game where the user would type out a given text. The
+                            first two versions were based on this concept.
+                            However, during the design phase of the third
+                            version, a better idea came to light. For a more
+                            realistic approach, the user would write an email
+                            instead of typing random text.
+                        </p>
+                    </div>
+                    <div className='flex flex-col gap-4'>
+                        <Image
+                            src='/images/projects/create-that-ux/cognitive-station-design-1.jpg'
+                            alt='ADHD Station 1'
+                            width={1920}
+                            height={1080}
+                            className='mt-4'
+                            ref={addToRefs}
+                        />
+                        <h3 className='text-2xl font-semibold md:text-3xl'>
+                            Versions 4 to 6
+                        </h3>
+                        <p className='text-base md:text-lg'>
+                            I ended up sticking with the concept of version 3,
+                            as the last three versions were quite similar.
+                            Version 4 was missing a description of what the
+                            simulation was about. This was fixed in the next
+                            version, but our group then decided it would be
+                            better to place the FAQ section next to the
+                            simulation instead of below it. Version 6 ended up
+                            being my final design.
+                        </p>
+                        <Image
+                            src='/images/projects/create-that-ux/cognitive-station-design-2.jpg'
+                            alt='ADHD Station 2'
+                            width={1920}
+                            height={1080}
+                            className='mt-4'
+                            ref={addToRefs}
+                        />
+                    </div>
                 </div>
 
                 {/* Prototype */}

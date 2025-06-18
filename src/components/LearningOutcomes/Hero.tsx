@@ -12,7 +12,6 @@ const bebasNeue = Bebas_Neue({
 const Hero = () => {
     const titleRef = useRef(null)
     const subtitleRef = useRef(null)
-    const imgRef = useRef(null)
 
     useEffect(() => {
         const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
@@ -28,13 +27,6 @@ const Hero = () => {
             { opacity: 0, y: 20 },
             { opacity: 1, y: 0, duration: 0.8 },
             '-=0.5'
-        )
-
-        tl.fromTo(
-            imgRef.current,
-            { opacity: 0 },
-            { opacity: 1, duration: 1 },
-            '-=0.3'
         )
     }, [])
 

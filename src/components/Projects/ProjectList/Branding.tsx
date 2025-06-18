@@ -423,7 +423,7 @@ const Branding = () => {
                         Album Covers
                     </h3>
                     <p className='text-base md:text-lg'>
-                        I created a couple album covers, with our chosen colour
+                        I created a couple album covers, with our chosen color
                         palette and my own logos.
                     </p>
                     <div className='flex flex-col'>

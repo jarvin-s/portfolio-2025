@@ -12,6 +12,7 @@ import TransitionLink from '@/components/TransitionLink'
 
 const slugToComponentMap: Record<string, string> = {
     'create-that-ux': 'CreateThatUX',
+    'project-x': 'ProjectX',
     branding: 'Branding',
     development: 'Development',
 }
@@ -71,7 +72,7 @@ export default async function ProjectPage({
                 <Image
                     src={project?.showcase_image || ''}
                     alt={project?.title || ''}
-                    className='w-full showcase-image'
+                    className='showcase-image w-full'
                     width={1920}
                     height={1080}
                     loading='lazy'

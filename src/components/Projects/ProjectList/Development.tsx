@@ -362,6 +362,7 @@ const Development = () => {
                     autoPlay
                     loop
                     muted
+                    playsInline
                     ref={videoRef}
                 />
                 <div className='mt-4 flex flex-col gap-4 md:flex-row'>

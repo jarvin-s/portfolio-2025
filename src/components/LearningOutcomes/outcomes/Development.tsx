@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import ProjectLink from '../ProjectLink'
+import TransitionLink from '../TransitionLink'
 
 const Development = () => {
     const containerRef = useRef<HTMLDivElement>(null)
@@ -113,6 +114,17 @@ const Development = () => {
                                     responsive and deployed using Vercel.
                                 </p>
                                 <p className='mb-4 text-lg text-gray-200'>
+                                    For Project X, I built a web app featuring
+                                    an interactive quiz focused on the South
+                                    Korean girl group, aespa. The project was
+                                    developed using Next.js, Tailwind CSS,
+                                    Framer Motion, and several other
+                                    technologies. This experience helped me
+                                    further strengthen my development skills,
+                                    especially in building dynamic and engaging
+                                    user experiences.
+                                </p>
+                                <p className='mb-4 text-lg text-gray-200'>
                                     Lastly, as part of the Development course, I
                                     completed several exercises to practice
                                     HTML, CSS, and JavaScript. To organize and
@@ -123,6 +135,9 @@ const Development = () => {
                                     <ProjectLink href='https://cardan-groep-1.vercel.app/'>
                                         View Development Project
                                     </ProjectLink>
+                                    <TransitionLink href='/projects/project-x'>
+                                        View Project X
+                                    </TransitionLink>
                                     <ProjectLink href='https://i558462.hera.fontysict.net/'>
                                         View Exercises
                                     </ProjectLink>
