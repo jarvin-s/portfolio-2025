@@ -114,6 +114,17 @@ const Development = () => {
                                     responsive and deployed using Vercel.
                                 </p>
                                 <p className='mb-4 text-lg text-gray-200'>
+                                    For Project X, I built a web app featuring
+                                    an interactive quiz focused on the South
+                                    Korean girl group, aespa. The project was
+                                    developed using Next.js, Tailwind CSS,
+                                    Framer Motion, and several other
+                                    technologies. This experience helped me
+                                    further strengthen my development skills,
+                                    especially in building dynamic and engaging
+                                    user experiences.
+                                </p>
+                                <p className='mb-4 text-lg text-gray-200'>
                                     Lastly, as part of the Development course, I
                                     completed several exercises to practice
                                     HTML, CSS, and JavaScript. To organize and

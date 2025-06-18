@@ -254,9 +254,9 @@ const ProjectX = () => {
                     </h3>
                     <p className='mb-4 mt-4 text-base md:text-left md:text-lg'>
                         This was a solo project with the freedom to choose my
-                        own topic. I decided to create a quiz about the South
-                        Korean girl group aespa, combining my interest in K-pop
-                        with my passion for web development.
+                        own topic. I chose to build a web app featuring an
+                        interactive quiz focused on the South Korean girl group,
+                        aespa.
                     </p>
                 </div>
             </div>
@@ -298,17 +298,42 @@ const ProjectX = () => {
                 </div>
             </div>
 
-            {/* User Testing */}
+            {/* Iterations */}
             <div
-                className='mt-20 max-w-sm px-4 pb-[20rem] md:max-w-2xl md:px-0'
+                className='mt-20 max-w-sm px-4 md:max-w-2xl md:px-0'
                 ref={addToRefs}
             >
                 <h3 className='mb-2 text-2xl font-semibold md:text-3xl'>
-                    User Testing
+                    Iterations
                 </h3>
-                <p className='mb-4 text-base md:text-lg'></p>
+                <p className='mb-4 text-base md:text-lg'>
+                    I documented a few design changes by showing the before and
+                    after versions and explaining the reasons behind them. These
+                    changes were based on feedback and what I learned during the
+                    design process.
+                </p>
                 <div className='mt-4 flex flex-col gap-4 md:flex-row'>
-                    <ProjectLink href='https://aespa-quiz.vercel.app/'>
+                    <ProjectLink href='/files/project-x-iterations.pdf'>
+                        View Iterations
+                    </ProjectLink>
+                </div>
+            </div>
+
+            {/* User Testing */}
+            <div
+                className='mt-20 max-w-sm px-4 pb-[10rem] md:max-w-2xl md:px-0'
+                ref={addToRefs}
+            >
+                <h3 className='mb-2 text-2xl font-semibold md:text-3xl'>
+                    User Tests
+                </h3>
+                <p className='mb-4 text-base md:text-lg'>
+                    I carried out user tests to check if certain parts of the
+                    app were clear and worked as expected. This helped me
+                    improve the overall usability of the app.
+                </p>
+                <div className='mt-4 flex flex-col gap-4 md:flex-row'>
+                    <ProjectLink href='/files/project-x-user-tests.pdf'>
                         View User Tests
                     </ProjectLink>
                 </div>
@@ -331,7 +356,7 @@ const ProjectX = () => {
                     autoPlay
                     loop
                     muted
-                    ref={videoRef}
+                    playsInline
                 />
                 <div className='mt-4 flex flex-col gap-4 md:flex-row'>
                     <ProjectLink href='https://aespa.fun/'>
